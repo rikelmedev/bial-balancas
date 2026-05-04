@@ -1,320 +1,90 @@
-import React, { useEffect, useState } from 'react';
-import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, CaretDown, List, X, Quotes } from '@phosphor-icons/react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState } from 'react';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Button = ({ children, variant = 'primary', className = "" }) => {
+  const variants = {
+    primary: "bg-brand-blue text-white hover:bg-brand-blue-light shadow-lg",
+    gold: "bg-[--bg-gold-gradient] text-brand-blue font-extrabold shadow-[0_10px_30px_rgba(212,175,55,0.25)]",
+  };
 
   return (
-    <nav className="navbar">
-      {/* 1. LOGO */}
-      <a href="#" className="logo-capsule">
-        <img src="/imagens/logo.png" alt="Bial Balanças" />
-      </a>
-
-      {/* 2. MENU */}
-      <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-        <a href="#vitrine" onClick={() => setIsOpen(false)}>Produtos</a>
-        <a href="#servicos" onClick={() => setIsOpen(false)}>Serviços</a>
-        <a href="#sobre" onClick={() => setIsOpen(false)}>Sobre</a>
-        <a href="#depoimentos" onClick={() => setIsOpen(false)}>Clientes</a>
-        
-        {/* BOTÃO MOBILE */}
-        <a href="#contato" className="btn-nav mobile-only-btn" onClick={() => setIsOpen(false)}>
-          <WhatsappLogo size={20} weight="fill" style={{marginRight:8}} /> Orçamento
-        </a>
-      </div>
-
-      {/* 3. BOTÃO DESKTOP */}
-      <div className="desktop-only-btn">
-        <a href="#contato" className="btn-nav">
-            <WhatsappLogo size={20} weight="fill" style={{marginRight:8}} /> Orçamento
-        </a>
-      </div>
-
-      {/* 4. HAMBÚRGUER */}
-      <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X /> : <List />}
-      </button>
-    </nav>
+    <button className={`px-8 py-4 rounded-full transition-all duration-300 active:scale-95 cursor-pointer font-bold ${variants[variant]} ${className}`}>
+      {children}
+    </button>
   );
 };
 
-const Hero = () => (
-  <header className="hero">
-    <div className="bg-glow-1"></div>
-    <div className="bg-glow-2"></div>
-
-    <div className="container hero-grid">
-      
-      {/* Texto */}
-      <div className="hero-text" data-aos="fade-right" data-aos-duration="1200">
-        <div className="hero-badge">
-          <Star weight="fill" size={18} /> Especialista em Pesagem
-        </div>
-        
-        <h1>A Solução Completa para o seu Negócio.</h1>
-        
-        <p>Venda, manutenção e calibração de balanças e impressoras térmicas. Tecnologia que gera lucro e evita paradas na sua operação.</p>
-        
-        <a href="https://wa.me/5517996780438" target="_blank" className="btn-primary-gold">
-          <WhatsappLogo size={28} weight="fill" /> Falar com Especialista
-        </a>
-      </div>
-      
-      <div className="hero-visual" data-aos="fade-left" data-aos-duration="1400">
-        <div className="hero-card">
-          <img src="/imagens/anuncio6.jpg" alt="Equipamentos Bial - Balanças e Automação" />
-        </div>
-      </div>
-
-    </div>
-  </header>
-);
-
-const ProductShowcase = () => (
-  <section id="vitrine" className="showcase">
-    <div className="container">
-      <div className="section-header" data-aos="fade-up">
-        <h2>Vitrine de Soluções</h2>
-        <p style={{color:'#64748B'}}>Equipamentos novos e seminovos revisados com garantia.</p>
-      </div>
-      <div className="product-grid">
-        <div className="product-card" data-aos="fade-up" data-aos-delay="0">
-          <img src="/imagens/anuncio1.jpg" className="product-img" alt="Balança Comercial" />
-          <div className="product-info">
-            <span className="product-cat">Balanças Comerciais</span>
-            <h3>Balanças de Balcão</h3>
-            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Ideais para padarias, mercados e açougues. Alta precisão com bateria interna.</p>
-          </div>
-        </div>
-        <div className="product-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="/imagens/anuncio4.jpg" className="product-img" alt="Balança Industrial" />
-          <div className="product-info">
-            <span className="product-cat">Indústria</span>
-            <h3>Plataformas Industriais</h3>
-            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Robustez para pesagens pesadas. Estrutura reforçada para chão de fábrica.</p>
-          </div>
-        </div>
-        <div className="product-card" data-aos="fade-up" data-aos-delay="200">
-          <img src="/imagens/anuncio5.jpg" className="product-img" alt="Impressora Térmica" />
-          <div className="product-info">
-            <span className="product-cat">Automação</span>
-            <h3>Impressoras Térmicas</h3>
-            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Agilidade na emissão de cupons e etiquetas. Compatível com os principais sistemas.</p>
-          </div>
-        </div>
-      </div>
-      <div style={{textAlign:'center', marginTop:'40px'}} data-aos="fade-in">
-        <a href="https://wa.me/5517996780438" style={{color:'#091E3A', fontWeight:'700', textDecoration:'underline'}}>Ver catálogo completo no WhatsApp</a>
-      </div>
-    </div>
-  </section>
-);
-
-const About = () => (
-  <section id="sobre" className="about-section">
-    <div className="container about-grid">
-      <div className="about-img-wrapper" data-aos="zoom-in-right">
-        <img src="/imagens/anuncio3.jpg" className="about-img" alt="Oficina Bial" />
-        <div className="exp-badge" data-aos="bounce-in" data-aos-delay="500">
-          <strong style={{fontSize:'2rem', display:'block'}}>+10</strong>
-          <span style={{fontSize:'0.9rem'}}>Anos de<br/>Experiência</span>
-        </div>
-      </div>
-      <div className="about-text" data-aos="fade-left">
-        <span style={{color:'#D4AF37', fontWeight:'800', textTransform:'uppercase', fontSize:'0.9rem'}}>Sobre a Bial Balanças</span>
-        <h2 style={{fontSize:'2.5rem', color:'#091E3A', marginBottom:'20px', lineHeight:'1.2'}}>Parceiro Estratégico do Seu Negócio</h2>
-        <p style={{color:'#64748B', marginBottom:'30px'}}>
-          Não somos apenas vendedores de equipamentos. A Bial Balanças nasceu para garantir que o seu negócio nunca pare. Entendemos que uma balança descalibrada ou uma impressora quebrada significa prejuízo.
-        </p>
-        <ul className="check-list" style={{listStyle:'none'}}>
-          <li><CheckCircle size={24} weight="fill" color="#D4AF37" /> Atendimento Técnico Especializado</li>
-          <li><CheckCircle size={24} weight="fill" color="#D4AF37" /> Laboratório Próprio de Manutenção</li>
-          <li><CheckCircle size={24} weight="fill" color="#D4AF37" /> Garantia Real em todos os serviços</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-);
-
-const Features = () => (
-  <section id="servicos" className="pro-services-section">
-    <div className="container">
-      <div className="section-header" data-aos="fade-down">
-        <h2>Serviços Profissionais</h2>
-        <p style={{color:'#64748B'}}>Soluções completas para manter sua operação ativa.</p>
-      </div>
-      <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))', gap:'30px'}}>
-        <div className="pro-card" data-aos="flip-up" data-aos-delay="0">
-          <div className="pro-card-header">
-            <div className="header-icon-circle"><Wrench size={38} weight="fill" /></div>
-            <h3>Manutenção Técnica</h3>
-          </div>
-          <div className="pro-card-body">
-            <ul className="pro-list">
-              <li>Reparo de placas e sensores</li>
-              <li>Ajustes mecânicos</li>
-              <li>Limpeza técnica interna</li>
-              <li>Atendimento no local</li>
-            </ul>
-            <a href="https://wa.me/5517996780438" className="btn-card">Agendar Visita</a>
-          </div>
-        </div>
-        <div className="pro-card" data-aos="flip-up" data-aos-delay="100">
-          <div className="pro-card-header">
-            <div className="header-icon-circle"><ShieldCheck size={38} weight="fill" /></div>
-            <h3>Calibração</h3>
-          </div>
-          <div className="pro-card-body">
-            <ul className="pro-list">
-              <li>Pesos padrão certificados</li>
-              <li>Emissão de laudo técnico</li>
-              <li>Ajuste fino de precisão</li>
-              <li>Conformidade com normas</li>
-            </ul>
-            <a href="https://wa.me/5517996780438" className="btn-card">Solicitar Laudo</a>
-          </div>
-        </div>
-        <div className="pro-card" data-aos="flip-up" data-aos-delay="200">
-          <div className="pro-card-header">
-            <div className="header-icon-circle"><Storefront size={38} weight="fill" /></div>
-            <h3>Venda e Troca</h3>
-          </div>
-          <div className="pro-card-body">
-            <ul className="pro-list">
-              <li>Equipamentos Novos</li>
-              <li>Seminovos Revisados</li>
-              <li>Aceitamos seu usado</li>
-              <li>Entrega e Instalação</li>
-            </ul>
-            <a href="https://wa.me/5517996780438" className="btn-card">Ver Estoque</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-// --- DEPOIMENTOS ---
-const Testimonials = () => (
-  <section id="depoimentos" className="testimonials-section">
-    <div className="container">
-      <div className="section-header" data-aos="fade-up">
-        <h2>O que dizem nossos clientes</h2>
-        <p style={{color:'#64748B'}}>A confiança de quem já transformou o seu negócio com a Bial.</p>
-      </div>
-      <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))', gap:'30px'}}>
-        {/* Cliente 1 */}
-        <div className="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-          <div className="quote-icon"><Quotes /></div>
-          <div className="testimonial-header">
-            <div className="client-avatar">RM</div>
-            <div className="client-info">
-              <h4>Roberto Mendes</h4>
-              <span>Supermercado Mendes</span>
-            </div>
-          </div>
-          <div className="stars">
-            <Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/>
-          </div>
-          <p className="testimonial-text">"A Bial Balanças salvou a nossa operação num sábado à tarde. O atendimento técnico foi extremamente rápido e a balança ficou melhor do que nova. Recomendo!"</p>
-        </div>
-        {/* Cliente 2 */}
-        <div className="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div className="quote-icon"><Quotes /></div>
-          <div className="testimonial-header">
-            <div className="client-avatar">CP</div>
-            <div className="client-info">
-              <h4>Carla Pereira</h4>
-              <span>Padaria Doce Pão</span>
-            </div>
-          </div>
-          <div className="stars">
-            <Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/>
-          </div>
-          <p className="testimonial-text">"Compramos todas as balanças e impressoras com eles. O equipamento é de primeira e o preço foi o melhor da região. O suporte pós-venda faz toda a diferença."</p>
-        </div>
-        {/* Cliente 3 */}
-        <div className="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-          <div className="quote-icon"><Quotes /></div>
-          <div className="testimonial-header">
-            <div className="client-avatar">FA</div>
-            <div className="client-info">
-              <h4>Fábio Almeida</h4>
-              <span>Indústria Alimentícia</span>
-            </div>
-          </div>
-          <div className="stars">
-            <Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/><Star weight="fill"/>
-          </div>
-          <p className="testimonial-text">"Precisávamos de calibração certificada urgente para uma auditoria. A equipe da Bial Balanças foi super profissional e entregou os laudos no prazo exato."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
-const FAQ = () => (
-  <section className="faq-section">
-    <div className="container">
-      <div className="section-header" data-aos="fade-up">
-        <h2>Perguntas Frequentes</h2>
-      </div>
-      <div className="faq-grid" data-aos="fade-up">
-        <details className="faq-item">
-          <summary>Vocês vendem balanças novas ou usadas? <CaretDown size={20} /></summary>
-          <p>Trabalhamos com ambas! Temos equipamentos novos das melhores marcas e também seminovos, totalmente revisados e com garantia.</p>
-        </details>
-        <details className="faq-item">
-          <summary>Como funciona a garantia? <CaretDown size={20} /></summary>
-          <p>Todos os nossos equipamentos (novos e usados) e serviços de manutenção possuem garantia balcão. Você compra com total segurança.</p>
-        </details>
-        <details className="faq-item">
-          <summary>Vocês fazem visita técnica no local? <CaretDown size={20} /></summary>
-          <p>Sim! Dependendo da região e do tipo de equipamento, enviamos um técnico até o seu estabelecimento. Entre em contato para consultar a disponibilidade.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-);
-
-const Footer = () => (
-  <footer id="contato">
-    <div className="container">
-      <div style={{display:'inline-flex', justifyContent: 'center', alignItems: 'center', background:'white', width: '90px', height: '90px', borderRadius:'50%', marginBottom:'30px', boxShadow:'0 10px 25px rgba(0,0,0,0.2)', padding: '5px'}}>
-          <img src="/imagens/logo.png" alt="Bial Logo" style={{width:'100%', height:'100%', objectFit:'contain', borderRadius:'50%'}} />
-      </div>
-      <h3 style={{color:'white', marginBottom:'20px'}}>Pronto para modernizar seu negócio?</h3>
-      <a href="https://wa.me/5517996780438" className="btn-primary-gold" style={{display:'inline-flex', marginBottom:'40px'}}>
-        <WhatsappLogo size={24} weight="fill" /> Iniciar Atendimento
-      </a>
-      <p style={{opacity:0.6, fontSize:'0.9rem'}}>&copy; {new Date().getFullYear()} Bial Balanças. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-);
-
-function App() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true, offset: 100 });
-  }, []);
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div style={{overflowX: 'hidden'}}>
-      <Navbar />
-      <Hero />
-      <ProductShowcase />
-      <About />
-      <Features />
-      <Testimonials />
-      <FAQ />
-      <Footer />
-      <a href="https://wa.me/5517996780438" target="_blank" className="floating-whatsapp" title="Falar no WhatsApp" data-aos="zoom-in" data-aos-delay="1000">
-        <WhatsappLogo size={32} weight="fill" />
-      </a>
+    <div className="min-h-screen">
+      {/* --- NAVBAR --- */}
+      <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl glass-nav rounded-full px-8 py-3 z-50 flex justify-between items-center shadow-xl">
+        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
+          <img src="/logo-bial.png" alt="Bial Balanças Logo" className="object-cover w-full h-full" />
+        </div>
+        
+        <ul className="hidden md:flex gap-10 font-extrabold text-brand-blue tracking-wide uppercase text-sm">
+          <li><a href="#produtos" className="hover:text-brand-gold transition-colors">Produtos</a></li>
+          <li><a href="#servicos" className="hover:text-brand-gold transition-colors">Serviços</a></li>
+          <li><a href="#sobre" className="hover:text-brand-gold transition-colors">Sobre</a></li>
+        </ul>
+
+        <Button className="hidden md:block !py-2 !px-6 text-sm">Orçamento</Button>
+      </nav>
+
+      {/* --- HERO SECTION --- */}
+      <section className="bg-[--bg-hero-radial] pt-48 pb-24 text-white relative overflow-hidden">
+        {/* Efeitos de Luz (Glows) */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-gold blur-[120px] rounded-full"></div>
+        </div>
+
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="text-center lg:text-left">
+            <span className="inline-block px-4 py-1 border border-brand-gold/40 rounded-full text-gold-light text-xs font-bold uppercase tracking-widest mb-6 bg-white/5 backdrop-blur-sm">
+              ⭐ Especialista em Pesagem
+            </span>
+            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tighter">
+              A Solução Completa para o seu <span className="text-brand-gold">Negócio.</span>
+            </h1>
+            <p className="text-slate-300 text-lg mb-10 max-w-xl mx-auto lg:mx-0">
+              Venda, manutenção e calibração de balanças industriais. Tecnologia que gera lucro e evita paradas na sua operação.
+            </p>
+            <Button variant="gold">Falar com Especialista</Button>
+          </div>
+
+          {/* Cartão 3D Visual */}
+          <div className="relative group">
+            <div className="bg-white/5 backdrop-blur-xl p-4 rounded-[40px] border border-white/20 shadow-2xl transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105 perspective-1000">
+              <img src="/hero-image.png" alt="Equipamentos Bial" className="rounded-[30px] w-full shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- VITRINE DE PRODUTOS --- */}
+      <section id="produtos" className="py-24 container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-brand-blue mb-4">Vitrine de Soluções</h2>
+          <div className="h-1.5 w-20 bg-brand-gold mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+              <div className="bg-slate-50 rounded-2xl h-64 mb-6 flex items-center justify-center overflow-hidden">
+                <img src={`/prod-${item}.png`} alt="Produto" className="w-40 group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <span className="text-brand-gold font-bold text-[10px] uppercase tracking-widest">Equipamento Premium</span>
+              <h3 className="text-xl font-bold text-brand-blue mt-2 mb-4">Balança de Alta Precisão</h3>
+              <a href="#" className="text-brand-blue font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                Ver detalhes <span>→</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
-
-export default App;
