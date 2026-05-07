@@ -1,4 +1,4 @@
-import React, { useState } from (modulo);
+import React, { useState } from 'react';
 
 const faqData = [
   {
