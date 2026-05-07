@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import StatsSection from './components/Stats';
+import Workflow from './components/Workflow';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 const Button = ({ children, variant = 'primary', className = "" }) => {
   const variants = {
-    primary: "bg-brand-blue text-white hover:bg-brand-blue-light shadow-lg",
-    gold: "bg-[--bg-gold-gradient] text-brand-blue font-extrabold shadow-[0_10px_30px_rgba(212,175,55,0.25)]",
+    primary: "bg-[--color-brand-blue] text-white hover:opacity-90 shadow-lg",
+    gold: "bg-[--bg-gold-gradient] text-[--color-brand-blue] font-extrabold shadow-xl",
   };
 
   return (
@@ -14,77 +18,71 @@ const Button = ({ children, variant = 'primary', className = "" }) => {
 };
 
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white selection:bg-brand-gold/30">
+      
       {/* --- NAVBAR --- */}
-      <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl glass-nav rounded-full px-8 py-3 z-50 flex justify-between items-center shadow-xl">
-        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden">
-          <img src="/logo-bial.png" alt="Bial Balanças Logo" className="object-cover w-full h-full" />
+      <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-md rounded-full px-8 py-3 z-50 flex justify-between items-center shadow-2xl border border-white/20">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-[--color-brand-blue] rounded-full flex items-center justify-center text-white font-black">B</div>
+          <span className="font-black text-[--color-brand-blue] tracking-tighter text-xl">BIAL</span>
         </div>
         
-        <ul className="hidden md:flex gap-10 font-extrabold text-brand-blue tracking-wide uppercase text-sm">
-          <li><a href="#produtos" className="hover:text-brand-gold transition-colors">Produtos</a></li>
-          <li><a href="#servicos" className="hover:text-brand-gold transition-colors">Serviços</a></li>
-          <li><a href="#sobre" className="hover:text-brand-gold transition-colors">Sobre</a></li>
+        <ul className="hidden md:flex gap-10 font-bold text-[--color-brand-blue] text-xs uppercase tracking-widest">
+          <li><a href="#inicio" className="hover:text-brand-gold transition-colors">Início</a></li>
+          <li><a href="#processo" className="hover:text-brand-gold transition-colors">Como Funciona</a></li>
+          <li><a href="#faq" className="hover:text-brand-gold transition-colors">Dúvidas</a></li>
         </ul>
 
-        <Button className="hidden md:block !py-2 !px-6 text-sm">Orçamento</Button>
+        <Button className="hidden md:block !py-2 !px-6 text-xs uppercase">Contato</Button>
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <section className="bg-[--bg-hero-radial] pt-48 pb-24 text-white relative overflow-hidden">
-        {/* Efeitos de Luz (Glows) */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-brand-gold blur-[120px] rounded-full"></div>
-        </div>
-
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <section id="inicio" className="pt-44 pb-24 px-6 bg-[--bg-hero-radial] text-white relative overflow-hidden">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="text-center lg:text-left">
-            <span className="inline-block px-4 py-1 border border-brand-gold/40 rounded-full text-gold-light text-xs font-bold uppercase tracking-widest mb-6 bg-white/5 backdrop-blur-sm">
-              ⭐ Especialista em Pesagem
+            <span className="inline-block px-4 py-1 border border-brand-gold/40 rounded-full text-brand-gold text-[10px] font-bold uppercase tracking-[2px] mb-8 bg-white/5 backdrop-blur-sm">
+              Manutenção • Instalação • Vendas
             </span>
-            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-6 tracking-tighter">
-              A Solução Completa para o seu <span className="text-brand-gold">Negócio.</span>
+            <h1 className="text-5xl lg:text-7xl font-black leading-[1.05] mb-8 tracking-tighter">
+              Precisão que impulsiona o seu <span className="text-brand-gold">Sucesso.</span>
             </h1>
-            <p className="text-slate-300 text-lg mb-10 max-w-xl mx-auto lg:mx-0">
-              Venda, manutenção e calibração de balanças industriais. Tecnologia que gera lucro e evita paradas na sua operação.
+            <p className="text-slate-300 text-lg mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Especialista em balanças industriais de todos os portes. Unimos venda de equipamentos modernos a um suporte técnico rigoroso para a sua indústria não parar.
             </p>
-            <Button variant="gold">Falar com Especialista</Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button variant="gold">Solicitar Orçamento</Button>
+              <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-all font-bold">
+                Ver Serviços
+              </button>
+            </div>
           </div>
 
-          {/* Cartão 3D Visual */}
+          {/* Área Visual do Hero */}
           <div className="relative group">
-            <div className="bg-white/5 backdrop-blur-xl p-4 rounded-[40px] border border-white/20 shadow-2xl transition-transform duration-700 group-hover:rotate-y-12 group-hover:scale-105 perspective-1000">
-              <img src="/hero-image.png" alt="Equipamentos Bial" className="rounded-[30px] w-full shadow-lg" />
+            <div className="bg-white/5 backdrop-blur-2xl p-4 rounded-[48px] border border-white/10 shadow-2xl transition-all duration-700 hover:scale-[1.02]">
+              <div className="aspect-video bg-slate-800 rounded-[36px] flex items-center justify-center text-slate-500 overflow-hidden shadow-inner">
+                <img src="/hero-scale.png" alt="Equipamentos de Pesagem" className="w-full h-full object-cover opacity-80" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* --- VITRINE DE PRODUTOS --- */}
-      <section id="produtos" className="py-24 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-brand-blue mb-4">Vitrine de Soluções</h2>
-          <div className="h-1.5 w-20 bg-brand-gold mx-auto rounded-full"></div>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-              <div className="bg-slate-50 rounded-2xl h-64 mb-6 flex items-center justify-center overflow-hidden">
-                <img src={`/prod-${item}.png`} alt="Produto" className="w-40 group-hover:scale-110 transition-transform duration-500" />
-              </div>
-              <span className="text-brand-gold font-bold text-[10px] uppercase tracking-widest">Equipamento Premium</span>
-              <h3 className="text-xl font-bold text-brand-blue mt-2 mb-4">Balança de Alta Precisão</h3>
-              <a href="#" className="text-brand-blue font-bold flex items-center gap-2 hover:gap-4 transition-all">
-                Ver detalhes <span>→</span>
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* --- COMPONENTES IMPORTADOS --- */}
+      
+      <StatsSection />
+
+      <div id="processo">
+        <Workflow />
+      </div>
+
+      <div id="faq">
+        <FAQ />
+      </div>
+
+      <Footer />
+
     </div>
   );
 }
