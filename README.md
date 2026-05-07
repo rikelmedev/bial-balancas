@@ -2,7 +2,7 @@
 
 Este projeto é uma landing page de alta performance desenvolvida para a **Bial Balanças**, uma empresa especialista em pesagem, venda e manutenção de balanças e impressoras térmicas. O foco principal foi criar uma experiência de utilizador fluida, uma interface "premium" e totalmente responsiva para maximizar a conversão de orçamentos.
 
-> **🔗 Link para o projeto (Deploy):** https://bialbalancas.netlify.app/
+> **🔗 Link para o projeto (Deploy):** https://bial-balancas.vercel.app/
 
 ---
 
