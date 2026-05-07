@@ -3,13 +3,8 @@
 @theme {
   --color-brand-blue: #091E3A;
   --color-brand-gold: #D4AF37;
-  --color-gold-light: #FADC86;
-  
   --bg-gold-gradient: linear-gradient(135deg, #FADC86 0%, #D4AF37 50%, #B49126 100%);
   --bg-hero-radial: radial-gradient(circle at 30% 30%, #1A3C61 0%, #091E3A 60%, #02060c 100%);
-
-  --animate-press: scale(0.97);
-  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @layer base {
@@ -17,10 +12,18 @@
     @apply bg-[#F8FAFC] text-[#1E293B] antialiased;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-.glass-nav {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.floating-whatsapp {
+  @apply fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 transition-transform hover:scale-110;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
