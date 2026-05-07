@@ -1,88 +1,114 @@
-import React from 'react';
-import StatsSection from './components/Stats';
-import Workflow from './components/Workflow';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+import React, { useEffect, useState } from 'react';
+import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, CaretDown, List, X, Quotes } from '@phosphor-icons/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const Button = ({ children, variant = 'primary', className = "" }) => {
-  const variants = {
-    primary: "bg-[--color-brand-blue] text-white hover:opacity-90 shadow-lg",
-    gold: "bg-[--bg-gold-gradient] text-[--color-brand-blue] font-extrabold shadow-xl",
-  };
-
+// --- COMPONENTES AUXILIARES ---
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <button className={`px-8 py-4 rounded-full transition-all duration-300 active:scale-95 cursor-pointer font-bold ${variants[variant]} ${className}`}>
-      {children}
-    </button>
+    <nav className="navbar">
+      <a href="#" className="logo-capsule">
+        <img src="/imagens/logo.png" alt="Bial Balanças" />
+      </a>
+      <div className={`nav-links ${isOpen ? 'active' : ''}`}>
+        <a href="#vitrine" onClick={() => setIsOpen(false)}>Produtos</a>
+        <a href="#servicos" onClick={() => setIsOpen(false)}>Serviços</a>
+        <a href="#sobre" onClick={() => setIsOpen(false)}>Sobre</a>
+        <a href="#depoimentos" onClick={() => setIsOpen(false)}>Clientes</a>
+        <a href="https://wa.me/5517996780438" className="btn-nav mobile-only-btn" onClick={() => setIsOpen(false)}>
+          <WhatsappLogo size={20} weight="fill" style={{marginRight:8}} /> Orçamento
+        </a>
+      </div>
+      <div className="desktop-only-btn">
+        <a href="https://wa.me/5517996780438" className="btn-nav">
+            <WhatsappLogo size={20} weight="fill" style={{marginRight:8}} /> Orçamento
+        </a>
+      </div>
+      <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X /> : <List />}
+      </button>
+    </nav>
   );
 };
 
-export default function App() {
+const Hero = () => (
+  <header className="hero">
+    <div className="bg-glow-1"></div>
+    <div className="bg-glow-2"></div>
+    <div className="container hero-grid">
+      <div className="hero-text" data-aos="fade-right" data-aos-duration="1200">
+        <div className="hero-badge">
+          <Star weight="fill" size={18} /> Especialista em Pesagem
+        </div>
+        <h1>A Solução Completa para o seu Negócio.</h1>
+        <p>Venda, manutenção e calibração de balanças e impressoras térmicas. Tecnologia que gera lucro e evita paradas na sua operação.</p>
+        <a href="https://wa.me/5517996780438" target="_blank" className="btn-primary-gold">
+          <WhatsappLogo size={28} weight="fill" /> Falar com Especialista
+        </a>
+      </div>
+      <div className="hero-visual" data-aos="fade-left" data-aos-duration="1400">
+        <div className="hero-card">
+          <img src="/imagens/anuncio6.jpg" alt="Equipamentos Bial" />
+        </div>
+      </div>
+    </div>
+  </header>
+);
+
+const ProductShowcase = () => (
+  <section id="vitrine" className="showcase">
+    <div className="container">
+      <div className="section-header" data-aos="fade-up">
+        <h2>Vitrine de Soluções</h2>
+        <p style={{color:'#64748B'}}>Equipamentos novos e seminovos revisados com garantia.</p>
+      </div>
+      <div className="product-grid">
+        <div className="product-card" data-aos="fade-up">
+          <img src="/imagens/anuncio1.jpg" className="product-img" alt="Balança Comercial" />
+          <div className="product-info">
+            <span className="product-cat">Balanças Comerciais</span>
+            <h3>Balanças de Balcão</h3>
+            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Alta precisão para padarias e açougues.</p>
+          </div>
+        </div>
+        <div className="product-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="/imagens/anuncio4.jpg" className="product-img" alt="Balança Industrial" />
+          <div className="product-info">
+            <span className="product-cat">Indústria</span>
+            <h3>Plataformas Industriais</h3>
+            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Robustez para pesagens pesadas.</p>
+          </div>
+        </div>
+        <div className="product-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="/imagens/anuncio5.jpg" className="product-img" alt="Impressora" />
+          <div className="product-info">
+            <span className="product-cat">Automação</span>
+            <h3>Impressoras Térmicas</h3>
+            <p style={{color:'#64748B', fontSize:'0.95rem'}}>Agilidade na emissão de cupons.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// --- COMPONENTE PRINCIPAL ---
+function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, offset: 100 });
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white selection:bg-brand-gold/30">
-      
-      {/* --- NAVBAR --- */}
-      <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-md rounded-full px-8 py-3 z-50 flex justify-between items-center shadow-2xl border border-white/20">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[--color-brand-blue] rounded-full flex items-center justify-center text-white font-black">B</div>
-          <span className="font-black text-[--color-brand-blue] tracking-tighter text-xl">BIAL</span>
-        </div>
-        
-        <ul className="hidden md:flex gap-10 font-bold text-[--color-brand-blue] text-xs uppercase tracking-widest">
-          <li><a href="#inicio" className="hover:text-brand-gold transition-colors">Início</a></li>
-          <li><a href="#processo" className="hover:text-brand-gold transition-colors">Como Funciona</a></li>
-          <li><a href="#faq" className="hover:text-brand-gold transition-colors">Dúvidas</a></li>
-        </ul>
-
-        <Button className="hidden md:block !py-2 !px-6 text-xs uppercase">Contato</Button>
-      </nav>
-
-      {/* --- HERO SECTION --- */}
-      <section id="inicio" className="pt-44 pb-24 px-6 bg-[--bg-hero-radial] text-white relative overflow-hidden">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="text-center lg:text-left">
-            <span className="inline-block px-4 py-1 border border-brand-gold/40 rounded-full text-brand-gold text-[10px] font-bold uppercase tracking-[2px] mb-8 bg-white/5 backdrop-blur-sm">
-              Manutenção • Instalação • Vendas
-            </span>
-            <h1 className="text-5xl lg:text-7xl font-black leading-[1.05] mb-8 tracking-tighter">
-              Precisão que impulsiona o seu <span className="text-brand-gold">Sucesso.</span>
-            </h1>
-            <p className="text-slate-300 text-lg mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Especialista em balanças industriais de todos os portes. Unimos venda de equipamentos modernos a um suporte técnico rigoroso para a sua indústria não parar.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="gold">Solicitar Orçamento</Button>
-              <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-all font-bold">
-                Ver Serviços
-              </button>
-            </div>
-          </div>
-
-          {/* Área Visual do Hero */}
-          <div className="relative group">
-            <div className="bg-white/5 backdrop-blur-2xl p-4 rounded-[48px] border border-white/10 shadow-2xl transition-all duration-700 hover:scale-[1.02]">
-              <div className="aspect-video bg-slate-800 rounded-[36px] flex items-center justify-center text-slate-500 overflow-hidden shadow-inner">
-                <img src="/hero-scale.png" alt="Equipamentos de Pesagem" className="w-full h-full object-cover opacity-80" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* --- COMPONENTES IMPORTADOS --- */}
-      
-      <StatsSection />
-
-      <div id="processo">
-        <Workflow />
-      </div>
-
-      <div id="faq">
-        <FAQ />
-      </div>
-
-      <Footer />
-
+    <div style={{overflowX: 'hidden'}}>
+      <Navbar />
+      <Hero />
+      <ProductShowcase />
+      <a href="https://wa.me/5517996780438" target="_blank" className="floating-whatsapp">
+        <WhatsappLogo size={32} weight="fill" />
+      </a>
     </div>
   );
 }
+
+export default App;
