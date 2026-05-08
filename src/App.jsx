@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, List, X, Quotes } from '@phosphor-icons/react';
+import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, List, X } from '@phosphor-icons/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// --- MARCAS (SOCIAL PROOF) ---
+// --- COMPONENTE: MARCAS (SOCIAL PROOF) ---
 const Brands = () => (
   <div className="bg-slate-50 py-10 border-y border-slate-100">
     <div className="container mx-auto px-6">
@@ -18,13 +18,14 @@ const Brands = () => (
   </div>
 );
 
-// --- CTA FINAL ---
+// --- COMPONENTE: CTA FINAL ---
 const FinalCTA = () => (
   <section className="py-20 bg-brand-blue relative overflow-hidden text-center text-white">
-    <div className="bg-glow-2 opacity-20"></div>
-    <div className="container relative z-10">
+    <div className="container relative z-10 px-6">
       <h2 className="text-4xl font-black mb-6" data-aos="fade-up">Sua produção não pode esperar.</h2>
-      <p className="text-slate-300 mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">Receba um orçamento imediato pelo WhatsApp e resolva seu problema hoje.</p>
+      <p className="text-slate-300 mb-10 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Receba um orçamento imediato pelo WhatsApp e garanta a precisão dos seus equipamentos hoje mesmo.
+      </p>
       <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-12 py-5 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform">
         <WhatsappLogo size={28} weight="fill" className="mr-2" /> SOLICITAR AGORA
       </a>
@@ -44,8 +45,8 @@ export default function App() {
       {/* NAVBAR */}
       <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/90 backdrop-blur-md rounded-full px-8 py-3 z-50 flex justify-between items-center shadow-xl border border-slate-100">
         <div className="flex items-center gap-2">
-          <img src="/imagens/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
-          <span className="font-black text-brand-blue text-xl">BIAL</span>
+          <img src="/imagens/logo.png" alt="Logo Bial" className="h-10 w-10 object-contain" />
+          <span className="font-black text-brand-blue text-xl tracking-tighter">BIAL</span>
         </div>
         <div className="hidden md:flex gap-8 font-bold text-brand-blue text-xs uppercase tracking-widest">
           <a href="#vitrine" className="hover:text-brand-gold transition-colors">Vendas</a>
@@ -60,24 +61,24 @@ export default function App() {
         </button>
       </nav>
 
-      {/* HERO */}
+      {/* HERO - FOTO DA OFICINA */}
       <section className="bg-hero-radial pt-48 pb-24 text-white">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right">
             <div className="inline-flex items-center gap-2 px-4 py-1 border border-brand-gold/40 rounded-full text-brand-gold text-[10px] font-bold uppercase mb-6">
-              <Star weight="fill" /> Precisão e Agilidade
+              <Star weight="fill" /> Precisão Industrial
             </div>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
               Sua Produção <span className="text-brand-gold">Não Pode Parar.</span>
             </h1>
-            <p className="text-slate-300 text-lg mb-10 max-w-lg">Manutenção ágil e venda de balanças industriais com garantia real. O suporte técnico que o seu negócio precisa.</p>
-            <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-10 py-4 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform">
-              FALAR COM ESPECIALISTA
+            <p className="text-slate-300 text-lg mb-10 max-w-lg">Manutenção ágil e venda de balanças com garantia real. O suporte técnico que o seu negócio precisa.</p>
+            <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-10 py-4 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform uppercase tracking-wider">
+              Falar com Especialista
             </a>
           </div>
           <div className="relative" data-aos="fade-left">
             <div className="bg-white/5 p-3 rounded-[40px] border border-white/10 shadow-2xl">
-              <img src="/imagens/oficina.jpg" alt="Oficina Bial" className="rounded-[30px] w-full shadow-lg" />
+              <img src="/imagens/Oficina.jpg" alt="Oficina Bial Balanças" className="rounded-[30px] w-full shadow-lg" />
             </div>
           </div>
         </div>
@@ -85,25 +86,25 @@ export default function App() {
 
       <Brands />
 
-      {/* SOBRE */}
+      {/* SOBRE - FOTO DO BIAL */}
       <section id="sobre" className="py-24 bg-white">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative" data-aos="zoom-in">
-            <img src="/imagens/bial.jpg" alt="Profissional Bial" className="rounded-3xl shadow-2xl w-full" />
-            <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl text-center">
+            <img src="/imagens/bial.jpg" alt="Profissional Bial" className="rounded-3xl shadow-2xl w-full object-cover aspect-square" />
+            <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl text-center border-4 border-white">
               <span className="text-3xl font-black block">+10</span>
-              <span className="text-xs font-bold uppercase tracking-widest">Anos de Mercado</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest">Anos de Mercado</span>
             </div>
           </div>
           <div data-aos="fade-left">
             <h2 className="text-4xl font-black text-brand-blue mb-6">Autoridade Técnica em Pesagem</h2>
-            <p className="text-slate-500 mb-8 leading-relaxed">Não vendemos apenas equipamentos, entregamos continuidade. Na Bial Balanças, entendemos que precisão é lucro e erro é desperdício.</p>
+            <p className="text-slate-500 mb-8 leading-relaxed">Não vendemos apenas equipamentos, entregamos continuidade. Na Bial Balanças, entendemos que precisão é lucro e erro é desperdício. Garantimos suporte total em venda, manutenção e calibração.</p>
             <div className="space-y-4">
               <div className="flex items-center gap-3 font-bold text-brand-blue">
                 <CheckCircle size={24} weight="fill" className="text-brand-gold" /> LABORATÓRIO TÉCNICO PRÓPRIO
               </div>
               <div className="flex items-center gap-3 font-bold text-brand-blue">
-                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> MANUTENÇÃO NO LOCAL
+                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> MANUTENÇÃO ESPECIALIZADA NO LOCAL
               </div>
             </div>
           </div>
