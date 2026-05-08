@@ -1,7 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, List, X } from '@phosphor-icons/react';
+import { WhatsappLogo, ShieldCheck, Wrench, Storefront, CheckCircle, Star, List, X, Quotes } from '@phosphor-icons/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+// --- MARCAS (SOCIAL PROOF) ---
+const Brands = () => (
+  <div className="bg-slate-50 py-10 border-y border-slate-100">
+    <div className="container mx-auto px-6">
+      <p className="text-center text-slate-400 text-xs font-bold uppercase tracking-widest mb-8">Especialista nas principais marcas do mercado</p>
+      <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+        <span className="font-black text-2xl text-slate-400">TOLEDO</span>
+        <span className="font-black text-2xl text-slate-400">FILIZOLA</span>
+        <span className="font-black text-2xl text-slate-400">URANO</span>
+        <span className="font-black text-2xl text-slate-400">BALMAK</span>
+      </div>
+    </div>
+  </div>
+);
+
+// --- CTA FINAL ---
+const FinalCTA = () => (
+  <section className="py-20 bg-brand-blue relative overflow-hidden text-center text-white">
+    <div className="bg-glow-2 opacity-20"></div>
+    <div className="container relative z-10">
+      <h2 className="text-4xl font-black mb-6" data-aos="fade-up">Sua produção não pode esperar.</h2>
+      <p className="text-slate-300 mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">Receba um orçamento imediato pelo WhatsApp e resolva seu problema hoje.</p>
+      <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-12 py-5 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform">
+        <WhatsappLogo size={28} weight="fill" className="mr-2" /> SOLICITAR AGORA
+      </a>
+    </div>
+  </section>
+);
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,71 +47,76 @@ export default function App() {
           <img src="/imagens/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
           <span className="font-black text-brand-blue text-xl">BIAL</span>
         </div>
-        
         <div className="hidden md:flex gap-8 font-bold text-brand-blue text-xs uppercase tracking-widest">
-          <a href="#vitrine" className="hover:text-brand-gold transition-colors">Produtos</a>
+          <a href="#vitrine" className="hover:text-brand-gold transition-colors">Vendas</a>
           <a href="#servicos" className="hover:text-brand-gold transition-colors">Serviços</a>
           <a href="#sobre" className="hover:text-brand-gold transition-colors">Sobre</a>
         </div>
-
         <a href="https://wa.me/5517996780438" className="hidden md:flex bg-brand-blue text-white px-6 py-2 rounded-full text-xs font-bold items-center gap-2">
           <WhatsappLogo size={18} weight="fill" /> ORÇAMENTO
         </a>
-
         <button className="md:hidden text-brand-blue" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <List size={28} />}
         </button>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="bg-hero-radial pt-48 pb-24 text-white">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right">
             <div className="inline-flex items-center gap-2 px-4 py-1 border border-brand-gold/40 rounded-full text-brand-gold text-[10px] font-bold uppercase mb-6">
-              <Star weight="fill" /> Especialista em Pesagem
+              <Star weight="fill" /> Precisão e Agilidade
             </div>
             <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              A Solução Completa para o seu <span className="text-brand-gold">Negócio.</span>
+              Sua Produção <span className="text-brand-gold">Não Pode Parar.</span>
             </h1>
-            <p className="text-slate-300 text-lg mb-10 max-w-lg">Venda, manutenção e calibração de balanças industriais. Tecnologia que evita paradas na sua operação.</p>
-            <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-10 py-4 rounded-full font-black shadow-2xl active:scale-95 transition-transform">
+            <p className="text-slate-300 text-lg mb-10 max-w-lg">Manutenção ágil e venda de balanças industriais com garantia real. O suporte técnico que o seu negócio precisa.</p>
+            <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-10 py-4 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform">
               FALAR COM ESPECIALISTA
             </a>
           </div>
           <div className="relative" data-aos="fade-left">
             <div className="bg-white/5 p-3 rounded-[40px] border border-white/10 shadow-2xl">
-              <img src="/imagens/oficina.png" alt="Oficina" className="rounded-[30px] w-full shadow-lg" />
+              <img src="/imagens/oficina.jpg" alt="Oficina Bial" className="rounded-[30px] w-full shadow-lg" />
             </div>
           </div>
         </div>
       </section>
+
+      <Brands />
 
       {/* SOBRE */}
       <section id="sobre" className="py-24 bg-white">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative" data-aos="zoom-in">
-            <img src="/imagens/bial.png" alt="Bial" className="rounded-3xl shadow-2xl w-full" />
+            <img src="/imagens/bial.jpg" alt="Profissional Bial" className="rounded-3xl shadow-2xl w-full" />
             <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl text-center">
               <span className="text-3xl font-black block">+10</span>
-              <span className="text-xs font-bold uppercase tracking-widest">Anos de Experiência</span>
+              <span className="text-xs font-bold uppercase tracking-widest">Anos de Mercado</span>
             </div>
           </div>
           <div data-aos="fade-left">
-            <h2 className="text-4xl font-black text-brand-blue mb-6">Parceiro Estratégico do Seu Negócio</h2>
-            <p className="text-slate-500 mb-8 leading-relaxed">Não somos apenas vendedores. A Bial Balanças garante que o seu negócio nunca pare. Entendemos que balança parada significa prejuízo.</p>
+            <h2 className="text-4xl font-black text-brand-blue mb-6">Autoridade Técnica em Pesagem</h2>
+            <p className="text-slate-500 mb-8 leading-relaxed">Não vendemos apenas equipamentos, entregamos continuidade. Na Bial Balanças, entendemos que precisão é lucro e erro é desperdício.</p>
             <div className="space-y-4">
               <div className="flex items-center gap-3 font-bold text-brand-blue">
-                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> ATENDIMENTO TÉCNICO ESPECIALIZADO
+                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> LABORATÓRIO TÉCNICO PRÓPRIO
               </div>
               <div className="flex items-center gap-3 font-bold text-brand-blue">
-                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> LABORATÓRIO PRÓPRIO
+                <CheckCircle size={24} weight="fill" className="text-brand-gold" /> MANUTENÇÃO NO LOCAL
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <a href="https://wa.me/5517996780438" className="floating-whatsapp">
+      <FinalCTA />
+
+      <footer className="bg-slate-950 py-10 text-center text-slate-500 text-sm">
+        <p>&copy; {new Date().getFullYear()} Bial Balanças. Todos os direitos reservados.</p>
+      </footer>
+
+      <a href="https://wa.me/5517996780438" className="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 transition-transform">
         <WhatsappLogo size={32} weight="fill" />
       </a>
     </div>
