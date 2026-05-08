@@ -113,7 +113,6 @@ const FAQ = () => {
   );
 };
 
-// --- COMPONENTE MESTRE ---
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
