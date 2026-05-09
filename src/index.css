@@ -1,42 +1,44 @@
-:root {
-  --brand-blue: #091E3A;
-  --brand-blue-light: #1A3C61;
-  --brand-gold: #D4AF37;
-  --bg-body: #F8FAFC;
-  --text-main: #1E293B;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@import "tailwindcss";
+
+@theme {
+  /* Cores da sua marca Bial */
+  --color-brand-blue: #091E3A;
+  --color-brand-gold: #D4AF37;
+  --bg-gold-gradient: linear-gradient(135deg, #FADC86 0%, #D4AF37 50%, #B49126 100%);
+  --bg-hero-radial: radial-gradient(circle at 30% 30%, #1A3C61 0%, #091E3A 60%, #02060c 100%);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--bg-body);
-  color: var(--text-main);
-  overflow-x: hidden;
+@layer base {
+  body {
+    @apply bg-[#F8FAFC] text-[#1E293B] antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
 }
 
-/* Grelhas Universais */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  width: 100%;
+
+/* Brilho no Botão (Shimmer) */
+.animate-shimmer {
+  background: linear-gradient(110deg, #D4AF37 45%, #FADC86 50%, #D4AF37 55%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
 }
 
-/* Ajuste de Secção */
-section { padding: 100px 0; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-/* Navbar e Hero */
-.navbar {
-  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-  width: 95%; max-width: 1300px; z-index: 1000;
-  background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px);
-  border-radius: 100px; padding: 10px 30px; display: flex; justify-content: space-between; align-items: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.5);
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
-.hero {
-  background: radial-gradient(circle at 30% 30%, #1A3C61 0%, #091E3A 60%, #02060c 100%);
-  padding-top: 180px; padding-bottom: 100px; color: white; min-height: 80vh; display: flex; align-items: center;
+/* Levitação Suave da Imagem */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Efeito Hover nos Cartões */
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-brand-gold/30;
 }
