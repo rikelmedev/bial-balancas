@@ -34,28 +34,48 @@ export default function App() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="bg-hero-radial pt-48 pb-24 text-white relative">
-        <div className="bg-glow-1"></div>
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div data-aos="fade-right">
-            <div className="hero-badge bg-white/5 border-brand-gold/40">
-              <Star weight="fill" /> Especialista em Pesagem
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-black mb-6 leading-tight">
-              Sua Produção <span className="text-brand-gold">Não Pode Parar.</span>
-            </h1>
-            <p className="text-slate-300 text-lg mb-10 max-w-lg">Manutenção ágil e venda de balanças industriais com suporte técnico que o seu negócio precisa para lucrar mais.</p>
-            <a href="https://wa.me/5517996780438" className="inline-flex bg-gold-gradient text-brand-blue px-10 py-4 rounded-full font-black animate-shimmer shadow-2xl active:scale-95 transition-transform uppercase tracking-wider">
-              Falar com Especialista
-            </a>
-          </div>
-          <div className="relative animate-float" data-aos="fade-left">
-            <div className="bg-white/5 p-3 rounded-[40px] border border-white/10 shadow-2xl backdrop-blur-sm">
-              <img src="/imagens/Oficina.png" alt="Oficina Bial" className="rounded-[30px] w-full shadow-lg" />
-            </div>
-          </div>
+      <section className="bg-hero-radial pt-48 pb-24 text-white relative overflow-hidden">
+  {/* Glows de ambiente para profundidade */}
+  <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.05)_0%,transparent_50%)]"></div>
+  
+  <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <div data-aos="fade-right">
+      <div className="inline-flex items-center gap-2 px-4 py-1 border border-brand-gold/30 rounded-full text-brand-gold text-[10px] font-bold uppercase mb-8 bg-brand-gold/5 backdrop-blur-sm">
+        <Star weight="fill" /> Especialista em Pesagem Industrial
+      </div>
+      
+      <h1 className="text-5xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter">
+        Sua Produção <span className="text-gradient-gold">Não Pode Parar.</span>
+      </h1>
+      
+      <p className="text-slate-300 text-xl mb-12 max-w-lg leading-relaxed">
+        Manutenção ágil e venda de balanças industriais com suporte técnico especializado para garantir o lucro da sua operação.
+      </p>
+      
+      <a href="https://wa.me/5517996780438" className="inline-flex animate-shimmer text-brand-blue px-12 py-5 rounded-full font-black shadow-[0_20px_50px_rgba(212,175,55,0.3)] active:scale-95 transition-transform uppercase tracking-wider text-sm">
+        <WhatsappLogo size={24} weight="fill" className="mr-2" /> Falar com Especialista
+      </a>
+    </div>
+
+    <div className="relative" data-aos="fade-left">
+      <div className="bg-glow-hero animate-pulse"></div>
+      
+      <div className="bg-white/5 p-4 rounded-[48px] border border-white/10 shadow-2xl backdrop-blur-md relative z-10 animate-float">
+        <img src="/imagens/Oficina.jpg" alt="Oficina Bial" className="rounded-[36px] w-full shadow-2xl" />
+        
+        <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-bounce">
+           <div className="w-12 h-12 bg-brand-gold rounded-xl flex items-center justify-center text-brand-blue">
+              <ShieldCheck size={32} weight="fill" />
+           </div>
+           <div>
+              <p className="text-brand-blue font-black text-xs uppercase">Qualidade</p>
+              <p className="text-slate-500 text-[10px] font-bold uppercase">Garantida</p>
+           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* BARRA DE ESTATÍSTICAS  */}
       <div className="bg-brand-blue py-12 border-y border-white/5">

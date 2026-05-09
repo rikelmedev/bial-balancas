@@ -42,3 +42,20 @@
 .card-hover {
   @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-brand-gold/30;
 }
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-gold to-white/80;
+}
+
+/* Glow decorativo atrás da imagem do Hero */
+.bg-glow-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+}
