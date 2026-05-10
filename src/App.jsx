@@ -35,7 +35,6 @@ export default function App() {
 
       {/* HERO SECTION */}
       <section className="bg-hero-radial pt-48 pb-24 text-white relative overflow-hidden">
-  {/* Glows de ambiente para profundidade */}
   <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.05)_0%,transparent_50%)]"></div>
   
   <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -61,7 +60,7 @@ export default function App() {
       <div className="bg-glow-hero animate-pulse"></div>
       
       <div className="bg-white/5 p-4 rounded-[48px] border border-white/10 shadow-2xl backdrop-blur-md relative z-10 animate-float">
-        <img src="/imagens/Oficina.jpg" alt="Oficina Bial" className="rounded-[36px] w-full shadow-2xl" />
+        <img src="/imagens/Oficina.png" alt="Oficina Bial" className="rounded-[36px] w-full shadow-2xl" />
         
         <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-bounce">
            <div className="w-12 h-12 bg-brand-gold rounded-xl flex items-center justify-center text-brand-blue">
