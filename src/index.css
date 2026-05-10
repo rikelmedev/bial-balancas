@@ -59,3 +59,16 @@
   filter: blur(60px);
   z-index: -1;
 }
+
+/* Efeito de Vidro para os Serviços */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Ícones com brilho interno */
+.icon-glow {
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+}
