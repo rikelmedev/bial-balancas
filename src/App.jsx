@@ -90,64 +90,57 @@ export default function App() {
     </div>
   </div>
 
-  {/* LADO DIREITO: INFO E DESTAQUES (Preenchendo o espaço branco) */}
-  <center>
-<div className="bg-slate-50 p-8 md:p-20 flex flex-col justify-center relative z-0" data-aos="fade-left">
-  <div className="max-w-xl mx-auto md:mx-0">
-    {/* Títulos */}
-    <span className="text-brand-gold font-black uppercase text-[10px] tracking-[4px] mb-4 block">Tecnologia e Suporte</span>
+  {/* LADO DIREITO: INFO E DESTAQUES CENTRALIZADOS */}
+<div className="bg-slate-50 p-8 md:p-20 flex flex-col items-center justify-center relative z-0 text-center" data-aos="fade-left">
+  <div className="max-w-xl mx-auto">
+    {/* Títulos Centralizados */}
+    <span className="text-brand-gold font-black uppercase text-[10px] tracking-[4px] mb-4 block mx-auto">
+      Tecnologia e Suporte
+    </span>
     <h2 className="text-brand-blue text-4xl lg:text-6xl font-black tracking-tighter mb-8 leading-tight">
       Precisão que <br /> gera <span className="text-brand-gold italic">resultado.</span>
     </h2>
     
-    <p className="text-slate-500 text-lg mb-12 leading-relaxed">
+    <p className="text-slate-500 text-lg mb-12 leading-relaxed mx-auto max-w-md">
       Especialistas em pesagem industrial. Garantimos que sua operação nunca pare por falta de manutenção ou calibração técnica.
     </p>
 
-    {/* GRADE DE DESTAQUES */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
-        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
-          <Wrench size={24} />
+    {/* GRADE DE DESTAQUES CENTRALIZADA */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 w-full">
+      <div className="flex flex-col items-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center text-brand-blue mb-4">
+          <Wrench size={28} />
         </div>
-        <div>
-          <h4 className="font-bold text-brand-blue text-sm uppercase">Reparos</h4>
-          <p className="text-slate-400 text-[10px] font-bold uppercase">Multimarcas ágil</p>
-        </div>
+        <h4 className="font-bold text-brand-blue text-sm uppercase mb-1">Reparos</h4>
+        <p className="text-slate-400 text-[10px] font-bold uppercase">Multimarcas ágil</p>
       </div>
 
-      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
-        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
-          <ShieldCheck size={24} />
+      <div className="flex flex-col items-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center text-brand-blue mb-4">
+          <ShieldCheck size={28} />
         </div>
-        <div>
-          <h4 className="font-bold text-brand-blue text-sm uppercase">Laudos</h4>
-          <p className="text-slate-400 text-[10px] font-bold uppercase">Certificação Total</p>
-        </div>
+        <h4 className="font-bold text-brand-blue text-sm uppercase mb-1">Laudos</h4>
+        <p className="text-slate-400 text-[10px] font-bold uppercase">Certificação Total</p>
       </div>
 
-      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
-        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
-          <Storefront size={24} />
+      <div className="flex flex-col items-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center text-brand-blue mb-4">
+          <Storefront size={28} />
         </div>
-        <div>
-          <h4 className="font-bold text-brand-blue text-sm uppercase">Vendas</h4>
-          <p className="text-slate-400 text-[10px] font-bold uppercase">Novos e Seminovo</p>
-        </div>
+        <h4 className="font-bold text-brand-blue text-sm uppercase mb-1">Vendas</h4>
+        <p className="text-slate-400 text-[10px] font-bold uppercase">Novos e Seminovo</p>
       </div>
 
-      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
-        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
-          <CheckCircle size={24} />
+      <div className="flex flex-col items-center p-6 bg-white rounded-3xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center text-brand-blue mb-4">
+          <CheckCircle size={28} />
         </div>
-        <div>
-          <h4 className="font-bold text-brand-blue text-sm uppercase">Contratos</h4>
-          <p className="text-slate-400 text-[10px] font-bold uppercase">Plano Preventivo</p>
-        </div>
+        <h4 className="font-bold text-brand-blue text-sm uppercase mb-1">Contratos</h4>
+        <p className="text-slate-400 text-[10px] font-bold uppercase">Plano Preventivo</p>
       </div>
     </div>
 
-    {/* Botão de Ação */}
+    {/* Botão de Ação Centralizado */}
     <a 
       href="https://wa.me/5517996780438" 
       className="bg-brand-blue text-white w-full py-6 rounded-2xl font-black animate-shimmer shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-3 tracking-[2px] text-sm"
@@ -157,7 +150,6 @@ export default function App() {
     </a>
   </div>
 </div>
-</center>
 </header>
 
       {/* BARRA DE ESTATÍSTICAS */}
