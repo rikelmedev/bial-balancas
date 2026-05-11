@@ -92,26 +92,72 @@ export default function App() {
     </div>
   </div>
 
-  {/* LADO DIREITO: Info e CTA */}
-  <div className="bg-slate-50 p-8 md:p-20 md:pt-48 flex flex-col justify-center relative z-0" data-aos="fade-left">
-    <div className="max-w-md mx-auto md:mx-0">
-      <h2 className="text-brand-blue text-4xl lg:text-5xl font-black tracking-tighter mb-8 leading-tight">
-        Manutenção e venda com precisão absoluta.
-      </h2>
-      
-      <p className="text-slate-500 text-lg mb-12">
-        Soluções completas para indústrias e comércios que buscam evitar prejuízos com balanças paradas.
-      </p>
-      
-      <a 
-        href="https://wa.me/5517996780438" 
-        className="bg-brand-blue text-white w-full py-6 rounded-2xl font-black animate-shimmer shadow-2xl hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-3 tracking-[2px] text-sm"
-      >
-        <WhatsappLogo size={24} weight="fill" className="text-brand-gold" />
-        FALAR COM ESPECIALISTA
-      </a>
+  {/* LADO DIREITO: INFO E DESTAQUES (Preenchendo o espaço branco) */}
+<div className="bg-slate-50 p-8 md:p-20 flex flex-col justify-center relative z-0" data-aos="fade-left">
+  <div className="max-w-xl mx-auto md:mx-0">
+    {/* Títulos */}
+    <span className="text-brand-gold font-black uppercase text-[10px] tracking-[4px] mb-4 block">Tecnologia e Suporte</span>
+    <h2 className="text-brand-blue text-4xl lg:text-6xl font-black tracking-tighter mb-8 leading-tight">
+      Precisão que <br /> gera <span className="text-brand-gold italic">resultado.</span>
+    </h2>
+    
+    <p className="text-slate-500 text-lg mb-12 leading-relaxed">
+      Especialistas em pesagem industrial. Garantimos que sua operação nunca pare por falta de manutenção ou calibração técnica.
+    </p>
+
+    {/* GRADE DE DESTAQUES */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
+          <Wrench size={24} />
+        </div>
+        <div>
+          <h4 className="font-bold text-brand-blue text-sm uppercase">Reparos</h4>
+          <p className="text-slate-400 text-[10px] font-bold uppercase">Multimarcas ágil</p>
+        </div>
+      </div>
+
+      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
+          <ShieldCheck size={24} />
+        </div>
+        <div>
+          <h4 className="font-bold text-brand-blue text-sm uppercase">Laudos</h4>
+          <p className="text-slate-400 text-[10px] font-bold uppercase">Certificação Total</p>
+        </div>
+      </div>
+
+      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
+          <Storefront size={24} />
+        </div>
+        <div>
+          <h4 className="font-bold text-brand-blue text-sm uppercase">Vendas</h4>
+          <p className="text-slate-400 text-[10px] font-bold uppercase">Novos e Seminovo</p>
+        </div>
+      </div>
+
+      <div className="flex gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 card-hover">
+        <div className="w-12 h-12 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue shrink-0">
+          <CheckCircle size={24} />
+        </div>
+        <div>
+          <h4 className="font-bold text-brand-blue text-sm uppercase">Contratos</h4>
+          <p className="text-slate-400 text-[10px] font-bold uppercase">Plano Preventivo</p>
+        </div>
+      </div>
     </div>
+
+    {/* Botão de Ação */}
+    <a 
+      href="https://wa.me/5517996780438" 
+      className="bg-brand-blue text-white w-full py-6 rounded-2xl font-black animate-shimmer shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-3 tracking-[2px] text-sm"
+    >
+      <WhatsappLogo size={24} weight="fill" className="text-brand-gold" />
+      SOLICITAR ORÇAMENTO TÉCNICO
+    </a>
   </div>
+</div>
 </header>
 
       {/* BARRA DE ESTATÍSTICAS */}
