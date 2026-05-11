@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Cores da sua marca Bial */
   --color-brand-blue: #091E3A;
+  --color-brand-blue-light: #1A3C61;
   --color-brand-gold: #D4AF37;
+  --color-brand-gold-shimmer: #FADC86;
+  
+  --color-brand-primary-btn: linear-gradient(135deg, #10b981 0%, #15803d 100%);
+
   --bg-gold-gradient: linear-gradient(135deg, #FADC86 0%, #D4AF37 50%, #B49126 100%);
   --bg-hero-radial: radial-gradient(circle at 30% 30%, #1A3C61 0%, #091E3A 60%, #02060c 100%);
 }
@@ -15,27 +19,35 @@
   }
 }
 
+/* --- ANIMAÇÕES E EFEITOS --- */
 
-/* Brilho no Botão (Shimmer) */
+/* Brilho Dourado no Botão */
 .animate-shimmer {
-  background: linear-gradient(110deg, #D4AF37 45%, #FADC86 50%, #D4AF37 55%);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite linear;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px; 
+}
+
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    110deg,
+    rgba(250, 220, 134, 0) 45%,
+    rgba(250, 220, 134, 0.4) 50%,
+    rgba(250, 220, 134, 0) 55%
+  );
+  transform: rotate(110deg);
+  animation: shimmer 4s infinite linear;
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-/* Levitação Suave da Imagem */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 /* Efeito Hover nos Cartões */
@@ -43,56 +55,18 @@
   @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-brand-gold/30;
 }
 
+/* Efeito de Vidro para sobreposições de texto */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
 .text-gradient-gold {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-gold to-white/80;
 }
 
-/* Glow decorativo atrás da imagem do Hero */
-.bg-glow-hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
-}
-
-/* Efeito de Vidro para os Serviços */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-/* Ícones com brilho interno */
-.icon-glow {
-  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
-}
-
-/* Efeito de Cartão de Luxo */
-.product-card-luxury {
-  @apply bg-white rounded-[40px] p-2 border border-slate-100 transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.02)];
-}
-
-.product-card-luxury:hover {
-  @apply shadow-[0_40px_80px_-15px_rgba(9,30,58,0.1)] -translate-y-4 border-brand-gold/20;
-}
-
-/* Moldura interna para a imagem */
-.product-img-container {
-  @apply bg-slate-50 rounded-[32px] overflow-hidden relative flex items-center justify-center;
-  aspect-ratio: 4/3;
-}
-
-.product-img-container::after {
-  content: "";
-  @apply absolute inset-0 bg-gradient-to-t from-brand-blue/5 to-transparent opacity-0 transition-opacity duration-500;
-}
-
-.product-card-luxury:hover .product-img-container::after {
-  @apply opacity-100;
+.polygon-left {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
 }
