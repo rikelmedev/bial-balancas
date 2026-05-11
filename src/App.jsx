@@ -62,8 +62,6 @@ export default function App() {
       }}
     ></div>
     
-    <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/60 to-transparent"></div>
-    
     <div className="relative z-20 text-white max-w-xl" data-aos="fade-right">
       <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md">
         <Star weight="fill" className="text-brand-gold" />
@@ -93,6 +91,7 @@ export default function App() {
   </div>
 
   {/* LADO DIREITO: INFO E DESTAQUES (Preenchendo o espaço branco) */}
+  <center>
 <div className="bg-slate-50 p-8 md:p-20 flex flex-col justify-center relative z-0" data-aos="fade-left">
   <div className="max-w-xl mx-auto md:mx-0">
     {/* Títulos */}
@@ -158,6 +157,7 @@ export default function App() {
     </a>
   </div>
 </div>
+</center>
 </header>
 
       {/* BARRA DE ESTATÍSTICAS */}
