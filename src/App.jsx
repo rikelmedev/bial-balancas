@@ -34,12 +34,17 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-<header className="relative w-full min-h-screen pt-39 md:pt-0 grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
+<header className="relative w-full min-h-[90vh] mt-24 md:mt-28 grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
   
-  <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 md:pt-44 shadow-2xl z-10">
+  {/* LADO ESQUERDO: Imagem e Autoridade */}
+  <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 shadow-2xl z-10">
     <div 
-      className="absolute inset-0 bg-cover bg-center" 
-      style={{backgroundImage: "url(/imagens/Oficina.png)", backgroundPosition: 'center 50%'}}
+      className="absolute inset-0 bg-cover" 
+      style={{
+        backgroundImage: "url(/imagens/Oficina.png)", 
+        backgroundPosition: 'center 30%', 
+        backgroundRepeat: 'no-repeat'
+      }}
     ></div>
     
     <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/60 to-transparent"></div>
