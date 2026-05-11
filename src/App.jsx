@@ -33,81 +33,66 @@ export default function App() {
         </button>
       </nav>
 
-      <header className="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
-        
-        <div className="polygon-hero relative min-h-[500px] md:min-h-full flex items-end p-8 md:p-20 shadow-2xl z-10">
-          {/* Foto da sua Oficina */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105" 
-            style={{backgroundImage: "url(/imagens/Oficina.png)"}}
-          ></div>
-          
-          {/* Overlay Azul Bial (DNA da Marca) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/60 to-transparent"></div>
-          
-          {/* Conteúdo sobre a Imagem */}
-          <div className="relative z-20 text-white max-w-xl" data-aos="fade-right">
-            <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md">
-              <Star weight="fill" className="text-brand-gold" />
-              <span className="text-[10px] font-black uppercase tracking-[3px]">Tecnologia em Pesagem</span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-8xl font-black mb-8 leading-[0.95] tracking-tighter">
-              Sua Produção <br />
-              <span className="text-brand-gold italic">Não Pode Parar.</span>
-            </h1>
-            
-            <div className="flex gap-6 mt-12">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
-                  <Wrench size={24} weight="fill" />
-                </div>
-                <p className="text-[10px] font-black uppercase leading-tight">Suporte Ágil <br/> no Local</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
-                  <ShieldCheck size={24} weight="fill" />
-                </div>
-                <p className="text-[10px] font-black uppercase leading-tight">Garantia <br/> Certificada</p>
-              </div>
-            </div>
+      {/* HERO */}
+<header className="relative w-full min-h-screen pt-32 md:pt-0 grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
+  
+  <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 md:pt-40 shadow-2xl z-10">
+    <div 
+      className="absolute inset-0 bg-cover bg-center" 
+      style={{backgroundImage: "url(/imagens/Oficina.png)", backgroundPosition: 'center 20%'}}
+    ></div>
+    
+    <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/60 to-transparent"></div>
+    
+    <div className="relative z-20 text-white max-w-xl" data-aos="fade-right">
+      <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md">
+        <Star weight="fill" className="text-brand-gold" />
+        <span className="text-[10px] font-black uppercase tracking-[3px]">Tecnologia em Pesagem</span>
+      </div>
+      
+      <h1 className="text-5xl lg:text-8xl font-black mb-8 leading-[0.95] tracking-tighter">
+        Sua Produção <br />
+        <span className="text-brand-gold italic">Não Pode Parar.</span>
+      </h1>
+      
+      <div className="flex gap-6 mt-12">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
+            <Wrench size={24} weight="fill" />
           </div>
+          <p className="text-[10px] font-black uppercase leading-tight">Suporte Ágil <br/> no Local</p>
         </div>
-
-        {/* LADO DIREITO: Informação e Conversão */}
-        <div className="bg-slate-50 p-8 md:p-24 flex flex-col justify-center relative z-0" data-aos="fade-left">
-          <div className="max-w-md mx-auto md:mx-0">
-            <h2 className="text-brand-blue text-4xl lg:text-5xl font-black tracking-tighter mb-8 leading-tight">
-              Manutenção e venda com precisão absoluta.
-            </h2>
-            
-            <p className="text-slate-500 text-lg mb-12 leading-relaxed">
-              Soluções completas para indústrias que buscam evitar prejuízos com balanças descalibradas ou paradas inesperadas.
-            </p>
-            
-            {/* Cards de Benefícios Rápidos */}
-            <div className="space-y-6 mb-12 border-l-2 border-slate-200 pl-6">
-              <div>
-                <h4 className="font-black text-brand-blue uppercase text-xs tracking-widest mb-1">Assistência Técnica</h4>
-                <p className="text-slate-400 text-xs font-bold uppercase tracking-tighter">Atendimento Multimarcas Especializado</p>
-              </div>
-              <div>
-                <h4 className="font-black text-brand-blue uppercase text-xs tracking-widest mb-1">Venda de Equipamentos</h4>
-                <p className="text-slate-400 text-xs font-bold uppercase tracking-tighter">Novos e Seminovo com Garantia Real</p>
-              </div>
-            </div>
-
-            {/* CTA Principal */}
-            <a 
-              href="https://wa.me/5517996780438" 
-              className="bg-brand-blue text-white w-full py-6 rounded-2xl font-black animate-shimmer shadow-[0_20px_50px_rgba(9,30,58,0.25)] hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-3 tracking-[2px] text-sm"
-            >
-              <WhatsappLogo size={24} weight="fill" className="text-brand-gold" />
-              FALAR COM ESPECIALISTA
-            </a>
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
+            <ShieldCheck size={24} weight="fill" />
           </div>
+          <p className="text-[10px] font-black uppercase leading-tight">Garantia <br/> Certificada</p>
         </div>
-      </header>
+      </div>
+    </div>
+  </div>
+
+  {/* LADO DIREITO: Info e CTA */}
+  <div className="bg-slate-50 p-8 md:p-20 md:pt-48 flex flex-col justify-center relative z-0" data-aos="fade-left">
+    <div className="max-w-md mx-auto md:mx-0">
+      <h2 className="text-brand-blue text-4xl lg:text-5xl font-black tracking-tighter mb-8 leading-tight">
+        Manutenção e venda com precisão absoluta.
+      </h2>
+      
+      <p className="text-slate-500 text-lg mb-12">
+        Soluções completas para indústrias e comércios que buscam evitar prejuízos com balanças paradas.
+      </p>
+      
+      <a 
+        href="https://wa.me/5517996780438" 
+        className="bg-brand-blue text-white w-full py-6 rounded-2xl font-black animate-shimmer shadow-2xl hover:scale-[1.02] active:scale-95 transition-all text-center flex items-center justify-center gap-3 tracking-[2px] text-sm"
+      >
+        <WhatsappLogo size={24} weight="fill" className="text-brand-gold" />
+        FALAR COM ESPECIALISTA
+      </a>
+    </div>
+  </div>
+</header>
 
       {/* BARRA DE ESTATÍSTICAS */}
       <div className="bg-brand-blue py-12 border-y border-white/5">
