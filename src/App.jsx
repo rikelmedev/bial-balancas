@@ -39,7 +39,7 @@ export default function App() {
   <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 md:pt-44 shadow-2xl z-10">
     <div 
       className="absolute inset-0 bg-cover bg-center" 
-      style={{backgroundImage: "url(/imagens/Oficina.png)", backgroundPosition: 'center 30%'}}
+      style={{backgroundImage: "url(/imagens/Oficina.png)", backgroundPosition: 'center 50%'}}
     ></div>
     
     <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/60 to-transparent"></div>
