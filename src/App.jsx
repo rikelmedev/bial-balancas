@@ -48,19 +48,20 @@ export default function App() {
   )}
 </nav>
 
-      {/* HERO */}
+{/* Hero */}
     <header className="relative w-full min-h-[90vh] mt-[73px] grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
-  
-  {/* LADO ESQUERDO: Imagem e Autoridade */}
-  <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 shadow-2xl z-10">
+  <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-end p-8 md:p-20 shadow-2xl z-10 bg-brand-blue">
+    
     <div 
-      className="absolute inset-0 bg-cover" 
+      className="absolute inset-0 bg-cover opacity-30 mix-blend-overlay" 
       style={{
         backgroundImage: "url(/imagens/Oficina.png)", 
         backgroundPosition: 'center 30%', 
         backgroundRepeat: 'no-repeat'
       }}
     ></div>
+
+    <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue via-transparent to-white/5"></div>
     
     <div className="relative z-20 text-white max-w-xl" data-aos="fade-right">
       <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md">
@@ -75,13 +76,13 @@ export default function App() {
       
       <div className="flex gap-6 mt-12">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
+          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-gold border border-white/10 backdrop-blur-sm">
             <Wrench size={24} weight="fill" />
           </div>
           <p className="text-[10px] font-black uppercase leading-tight">Suporte Ágil <br/> no Local</p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-brand-gold/20 flex items-center justify-center text-brand-gold border border-brand-gold/30">
+          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-gold border border-white/10 backdrop-blur-sm">
             <ShieldCheck size={24} weight="fill" />
           </div>
           <p className="text-[10px] font-black uppercase leading-tight">Garantia <br/> Certificada</p>
