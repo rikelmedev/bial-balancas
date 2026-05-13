@@ -60,7 +60,7 @@ export default function App() {
               backgroundRepeat: 'no-repeat'
             }}
           ></div>
-          <div className="absolute inset-0 bg-brand-blue w-full md:w-[30%] z-10"></div>
+          <div className="absolute inset-0 bg-brand-blue w-full md:w-[40%] z-10"></div>
           
           <div className="relative z-20 p-8 md:p-20 text-white max-w-xl" data-aos="fade-right">
             <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md">
