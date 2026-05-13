@@ -48,7 +48,7 @@ export default function App() {
   )}
 </nav>
 
-{/* HERO SECTION */}
+{/* HERO */}
 <header className="relative w-full min-h-[90vh] mt-[73px] grid grid-cols-1 md:grid-cols-[1.3fr,1fr] bg-white overflow-hidden">
         {/* LADO ESQUERDO: BLOCO AZUL SÓLIDO */}
         <div className="polygon-hero relative min-h-[600px] md:min-h-full flex items-center shadow-2xl z-10 overflow-hidden bg-white">
@@ -91,7 +91,6 @@ export default function App() {
   {/* LADO DIREITO: INFO E DESTAQUES CENTRALIZADOS */}
 <div className="bg-slate-50 p-8 md:p-20 flex flex-col items-center justify-center relative z-0 text-center" data-aos="fade-left">
   <div className="max-w-xl mx-auto">
-    {/* Títulos Centralizados */}
     <span className="text-brand-gold font-black uppercase text-[10px] tracking-[4px] mb-4 block mx-auto">
       Tecnologia e Suporte
     </span>
