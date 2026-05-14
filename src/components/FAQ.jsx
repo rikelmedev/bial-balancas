@@ -14,11 +14,19 @@ export default function FAQ({ openFaq, setOpenFaq }) {
         <h2 className="text-3xl font-black text-brand-blue text-center mb-12">Dúvidas Frequentes</h2>
         <div className="space-y-4">
           {faqs.map((f, i) => (
-            <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden">
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full p-6 text-left flex justify-between font-bold text-brand-blue uppercase text-sm">
-                {f.q} <CaretDown size={20} className={openFaq === i ? 'rotate-180' : ''} />
+            <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
+              <button 
+                onClick={() => setOpenFaq(openFaq === i ? null : i)} 
+                className="w-full p-6 text-left flex justify-between font-bold text-brand-blue uppercase text-sm"
+              >
+                {f.q} 
+                <CaretDown size={20} className={`transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
               </button>
-              {openFaq === i && <div className="px-6 pb-6 text-slate-500 text-sm leading-relaxed border-t border-slate-50 pt-4">{f.a}</div>}
+              <div className={`transition-all duration-500 ease-in-out overflow-hidden ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="px-6 pb-6 text-slate-500 text-sm leading-relaxed border-t border-slate-50 pt-4">
+                  {f.a}
+                </div>
+              </div>
             </div>
           ))}
         </div>
