@@ -10,7 +10,8 @@ Este projeto é uma landing page de alta performance desenvolvida para a **Bial 
 
 | Versão Desktop | Versão Mobile (Responsivo) |
 | :--- | :--- |
-| ![Preview Desktop](Telas/Desktop.png) | ![Preview Mobile](Telas/Mobile.png)|
+| ![Preview Desktop](Telas/Desktop.png) | ![Preview Desktop](Telas/Desktop2.0.png)
+| ![Preview Mobile](Telas/Mobile-hero.png)| ![Preview Mobile](Telas/Mobile2.0.png)|
 
 ---
 
