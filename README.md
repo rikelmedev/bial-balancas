@@ -17,19 +17,20 @@ A versão 2.0 focou em elevar a autoridade visual da marca, saindo de um layout 
 
 ---
 
-📌 O Desafio
+
+##📌 O Desafio
 O objetivo era transformar a presença digital da Bial numa ferramenta de autoridade técnica. O setor industrial exige confiança e precisão; por isso, o design foi repensado para transmitir solidez, utilizando uma paleta de cores institucional e imagens reais da operação técnica.
 
-🛠️ Stack Técnica (Modern Web Stack)
-React 19: Utilização das versões mais recentes para uma interface reativa e performática.
+##🛠️ Stack Técnica (Modern Web Stack)
+-React 19: Utilização das versões mais recentes para uma interface reativa e performática.
 
-Tailwind CSS v4: Estilização atómica moderna, utilizando as novas capacidades de variáveis e temas da v4.
+-Tailwind CSS v4: Estilização atómica moderna, utilizando as novas capacidades de variáveis e temas da v4.
 
-Vite: Bundler de próxima geração para um desenvolvimento ultrarrápido.
+-Vite: Bundler de próxima geração para um desenvolvimento ultrarrápido.
 
-AOS & Phosphor Icons: Micro-interações fluidas e ícones vetoriais leves.
+-AOS & Phosphor Icons: Micro-interações fluidas e ícones vetoriais leves.
 
-🧠 Decisões de Engenharia & Arquitetura
+##🧠 Decisões de Engenharia & Arquitetura
 1. Refatoração para Componentização
 Migrei o projeto de um ficheiro único para uma Arquitetura de Componentes Independentes. Cada secção do site (Navbar, Hero, Vitrine, FAQ, etc.) possui agora o seu próprio ficheiro, seguindo o princípio da Responsabilidade Única.
 
@@ -39,7 +40,7 @@ Implementei um layout de tela dividida no Hero com blocos sólidos de cor e cort
 3. Responsividade Híbrida e Mobile-First
 A interface foi construída para ser 100% responsiva, com uma Navbar inteligente que transita para um menu hambúrguer interativo, garantindo que o pedido de orçamento esteja sempre a um toque de distância.
 
-🚀 Como rodar o projeto localmente
+##🚀 Como rodar o projeto localmente
 Clone este repositório: git clone https://github.com/rikelmedev/bial-balancas.git
 
 Instale as dependências: npm install
