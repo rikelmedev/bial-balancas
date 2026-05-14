@@ -166,7 +166,7 @@ export default function App() {
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative" data-aos="zoom-in">
             <div className="bg-brand-gold/10 absolute inset-0 rounded-full blur-3xl scale-150 -z-10"></div>
-            <img src="/imagens/bial.png" alt="Profissional Bial" className="rounded-3xl shadow-2xl w-full object-center aspect-square" />
+            <img src="/imagens/bial.png" alt="Profissional Bial" className="rounded-3xl shadow-2xl w-full object-cover aspect-square" />
             <div className="absolute -bottom-6 -right-6 bg-brand-blue text-white p-6 rounded-2xl shadow-xl text-center border-4 border-white">
               <span className="text-3xl font-black block">+10</span>
               <span className="text-[10px] font-bold uppercase tracking-widest text-brand-gold">Anos de Mercado</span>
