@@ -19,7 +19,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
       <div className="flex items-center gap-4">
         <a
           href={whatsappLink('Olá! Gostaria de solicitar um orçamento.')}
-          className="hidden md:flex bg-brand-accent text-[#412402] px-8 py-2.5 rounded-full text-xs font-black items-center gap-2 active:scale-95 transition-transform"
+          className="hidden md:flex bg-brand-accent text-brand-blue px-8 py-2.5 rounded-full text-xs font-black items-center gap-2 active:scale-95 transition-transform"
         >
           <WhatsappLogo size={18} weight="fill" /> ORÇAMENTO
         </a>
@@ -33,7 +33,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
           <a href="#vitrine" onClick={() => setIsOpen(false)} className="font-bold text-sm uppercase">Vendas</a>
           <a href="#servicos" onClick={() => setIsOpen(false)} className="font-bold text-sm uppercase">Serviços</a>
           <a href="#sobre" onClick={() => setIsOpen(false)} className="font-bold text-sm uppercase">Sobre</a>
-          <a href={whatsappLink('Olá! Gostaria de solicitar um orçamento.')} className="bg-brand-accent text-[#412402] p-4 rounded-xl text-center font-bold">
+          <a href={whatsappLink('Olá! Gostaria de solicitar um orçamento.')} className="bg-brand-accent text-brand-blue p-4 rounded-xl text-center font-bold">
             Solicitar Orçamento
           </a>
         </div>

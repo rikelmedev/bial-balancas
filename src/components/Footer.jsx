@@ -11,7 +11,7 @@ export default function Footer() {
         <h3 className="text-2xl font-black mb-8 leading-tight">Precisão e Confiança em <br /> cada Pesagem.</h3>
         <a
           href={whatsappLink('Olá! Gostaria de solicitar um orçamento técnico.')}
-          className="inline-flex bg-brand-accent text-[#412402] px-12 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:brightness-110 transition-all"
+          className="inline-flex bg-brand-accent text-brand-blue px-12 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:brightness-110 transition-all"
         >
           Solicitar Orçamento Técnico
         </a>

@@ -41,7 +41,7 @@ export default function Vitrine() {
                   <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Sob Orçamento</span>
                   <a
                     href={whatsappLink(`Olá! Tenho interesse no equipamento: ${p.t}.`)}
-                    className="bg-brand-accent text-[#412402] w-11 h-11 rounded-full flex items-center justify-center hover:brightness-110 transition-all"
+                    className="bg-brand-accent text-brand-blue w-11 h-11 rounded-full flex items-center justify-center hover:brightness-110 transition-all"
                   >
                     <WhatsappLogo size={20} weight="fill" />
                   </a>

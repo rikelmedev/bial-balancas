@@ -36,7 +36,7 @@ export default function Hero() {
 
         <a
           href={whatsappLink('Olá! Gostaria de solicitar um orçamento técnico.')}
-          className="bg-brand-accent text-[#412402] w-fit px-8 py-4 rounded-lg font-black text-xs tracking-[2px] flex items-center gap-3 hover:brightness-110 active:scale-95 transition-all"
+          className="bg-brand-accent text-brand-blue w-fit px-8 py-4 rounded-lg font-black text-xs tracking-[2px] flex items-center gap-3 hover:brightness-110 active:scale-95 transition-all"
         >
           <WhatsappLogo size={20} weight="fill" />
           SOLICITAR ORÇAMENTO TÉCNICO
