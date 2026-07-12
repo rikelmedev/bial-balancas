@@ -1,48 +1,76 @@
-# 🚀 Landing Page - Bial Balanças
+# Bial Balanças — Landing Page
 
-Este projeto é uma landing page de alta performance desenvolvida para a **Bial Balanças**, uma empresa especialista em pesagem, venda e manutenção de balanças e impressoras térmicas. O foco principal foi criar uma experiência de utilizador fluida, uma interface "premium" e totalmente responsiva para maximizar a conversão de orçamentos.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white&style=flat-square)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square)
+![Deploy](https://img.shields.io/badge/deploy-vercel-000000?logo=vercel&logoColor=white&style=flat-square)
 
-> **🔗 Link para o projeto (Deploy):** https://bial-balancas.vercel.app/
+Landing page de alta performance para a **Bial Balanças**, empresa especialista em pesagem, venda e manutenção de balanças e impressoras térmicas. Construída para transmitir autoridade técnica e converter visitantes em pedidos de orçamento via WhatsApp.
 
----
-
-## 📸 Demonstração
-
-| Versão Desktop | Versão Mobile (Responsivo) |
-| :--- | :--- |
-| ![Preview Desktop](Telas/Desktop.png) | ![Preview Desktop](Telas/Desktop2.0.png)
-| ![Preview Mobile](Telas/Mobile-hero.png)| ![Preview Mobile](Telas/Mobile2.0.png)|
+**[→ Ver o projeto no ar](https://bial-balancas.vercel.app/)**
 
 ---
 
-## 📌 Problema
-A empresa precisava de uma presença digital moderna e com autoridade que transmitisse confiança aos clientes (supermercados, padarias, indústrias). O objetivo era destacar os serviços de manutenção e venda, além de facilitar ao máximo o pedido de orçamentos rápidos, especialmente para utilizadores em dispositivos móveis (onde a urgência por reparos é maior).
+## Demonstração
 
-## 💡 Solução
-Desenvolvi uma landing page moderna utilizando **React + Vite**. A solução focou em:
-* **Conversão:** Botões de *Call to Action* (CTA) estratégicos e um botão flutuante direcionando diretamente para o WhatsApp do especialista.
-* **UX/UI Premium:** Design sofisticado utilizando o conceito de *Glassmorphism* (efeito de vidro 3D) e uma paleta de cores institucional (Azul Marinho e Dourado).
-* **Prova Social:** Inclusão de uma secção de depoimentos de clientes para gerar confiança imediata.
-* **Performance:** Carregamento ultrarrápido garantido pelo *bundler* Vite.
+| Desktop | Mobile |
+| :---: | :---: |
+| ![Preview Desktop](Telas/Desktop2.0.png) | ![Preview Mobile](Telas/mobile2.0.png) |
 
-## 🛠️ Stack Técnica
-* **React 19**: Biblioteca principal para construção da interface e componentização.
-* **Vite**: Ferramenta de build para garantir velocidade no desenvolvimento e execução.
-* **CSS3 Puro**: Estilização avançada utilizando CSS Grid, Flexbox, variáveis nativas (`:root`) e animações Keyframes.
-* **Phosphor Icons**: Biblioteca de ícones vetoriais modernos e leves.
-* **AOS (Animate On Scroll)**: Biblioteca para animações fluidas baseadas no scroll da página.
+---
 
-## 🧠 O que eu aprendi / Decisões técnicas
-* **Glassmorphism e UI 3D:** Aprofundei os meus conhecimentos em CSS ao criar cartões com efeito de vidro (`backdrop-filter: blur`), gradientes radiais complexos e perspetivas 3D no momento em que o utilizador passa o rato por cima da imagem Hero.
-* **Responsividade Híbrida (Mobile-First):** Desenvolvi uma Navbar inteligente que utiliza uma estrutura de 3 colunas em *CSS Grid* no Desktop, e transita suavemente para um *Menu Hambúrguer* interativo em ecrãs menores.
-* **Gerenciamento de Estado Simples:** Utilizei o *hook* `useState` do React para controlar a abertura e o fecho do menu mobile de forma reativa.
+## O Problema
 
-## 🚀 Como rodar o projeto localmente
-1. Clone este repositório: `git clone https://github.com/rikelmedev/bial-balancas.git`
-2. Instale as dependências: `npm install`
-3. Inicie o servidor de desenvolvimento: `npm run dev`
+A empresa precisava de uma presença digital moderna e com autoridade que transmitisse confiança a clientes B2B (supermercados, padarias, indústrias). O objetivo era destacar os serviços de manutenção e venda, além de facilitar ao máximo o pedido de orçamentos rápidos — especialmente em dispositivos móveis, onde a urgência por reparos costuma ser maior.
 
-## 📈 O que eu melhoraria no futuro
-* **Catálogo Dinâmico:** Integração com um CMS ou API para que o próprio cliente possa adicionar ou remover produtos da vitrine sem precisar alterar o código.
-* **Testes Automatizados:** Implementaria testes básicos de componentes para garantir que atualizações futuras não quebrem a interface.
-* **Internacionalização:** Prepararia a página para suportar múltiplos idiomas, caso a empresa decida expandir fronteiras.
+## A Solução
+
+Landing page construída com **React + Vite**, com foco em três pilares:
+
+- **Conversão** — CTAs estratégicos em cada seção e botão flutuante direcionando direto para o WhatsApp do especialista.
+- **UX/UI Premium** — Design sofisticado com *glassmorphism* (efeito de vidro 3D) e paleta institucional (azul-marinho e dourado).
+- **Performance** — Bundling e dev server via Vite para carregamento rápido.
+
+## Destaques Técnicos
+
+- **Componentização** — página dividida em componentes de seção isolados (`Navbar`, `Hero`, `Stats`, `Sobre`, `Vitrine`, `Servicos`, `FAQ`, `Footer`), cada um com responsabilidade única.
+- **Responsividade mobile-first** — Navbar com estrutura de 3 colunas em CSS Grid no desktop, que se transforma em menu hambúrguer interativo em telas menores.
+- **Gerenciamento de estado** — uso de `useState` para controlar abertura do menu mobile e do acordeão de FAQ de forma reativa.
+- **CSS avançado** — cartões com `backdrop-filter: blur`, gradientes radiais complexos e transformações 3D no hover do Hero.
+- **Animações no scroll** — integração com a biblioteca AOS (Animate On Scroll) para revelar conteúdo conforme o usuário navega pela página.
+
+## Stack Técnica
+
+| Categoria | Tecnologia |
+| --- | --- |
+| Biblioteca / Build | React 19, Vite |
+| Estilização | Tailwind CSS 4, CSS3 (Grid, Flexbox, variáveis nativas, Keyframes) |
+| Ícones | Phosphor Icons |
+| Animação | AOS (Animate On Scroll) |
+| Qualidade | ESLint |
+
+## Decisões Técnicas / O que Aprendi
+
+- **Glassmorphism e UI 3D** — aprofundei conhecimentos em CSS ao criar cartões com efeito de vidro, gradientes radiais complexos e perspectivas 3D no hover da imagem do Hero.
+- **Responsividade híbrida** — Navbar inteligente com CSS Grid no desktop e menu hambúrguer interativo no mobile.
+- **Gerenciamento de estado simples** — uso do hook `useState` para controlar UI reativa sem precisar de uma lib de estado externa.
+
+## Como Rodar o Projeto Localmente
+
+```bash
+git clone https://github.com/rikelmedev/bial-balancas.git
+cd bial-balancas
+npm install
+npm run dev
+```
+
+## Próximos Passos
+
+- **Catálogo dinâmico** — integração com um CMS ou API para o próprio cliente adicionar/remover produtos da vitrine sem alterar código.
+- **Testes automatizados** — testes de componentes para garantir que atualizações futuras não quebrem a interface.
+- **Internacionalização** — suporte a múltiplos idiomas, caso a empresa decida expandir fronteiras.
+- **SEO local e analytics** — dados estruturados (JSON-LD) e rastreamento de conversão dos cliques em WhatsApp.
+
+---
+
+Feito por [Rikelme](https://github.com/rikelmedev).
