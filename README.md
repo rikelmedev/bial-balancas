@@ -15,7 +15,7 @@ Landing page de alta performance para a **Bial Balanças**, empresa especialista
 
 | Desktop | Mobile |
 | :---: | :---: |
-| ![Preview Desktop](Telas/Desktop2.0.png) | ![Preview Mobile](Telas/mobile2.0.png) |
+| ![Preview Desktop](Telas/Desktop3.0.png) | ![Preview Mobile](Telas/Mobile3.0.png) |
 
 ---
 
@@ -27,18 +27,18 @@ O objetivo era transformar a presença digital da Bial numa ferramenta de autori
 
 Landing page construída com **React + Vite**, com foco em três pilares:
 
-- **Conversão** — CTAs estratégicos em cada seção e botão flutuante direcionando direto para o WhatsApp do especialista.
-- **UX/UI Premium** — Design sofisticado com *glassmorphism* (efeito de vidro 3D) e paleta institucional (azul-marinho e dourado).
-- **Performance** — Bundling e dev server via Vite para carregamento rápido.
+- **Conversão** — CTAs estratégicos em cada seção e botão flutuante direcionando direto para o WhatsApp do especialista, com mensagem pré-preenchida por contexto.
+- **Identidade industrial-técnica** — tema escuro com grade de fundo tipo blueprint, tipografia monoespaçada para dados técnicos e a dupla azul-marinho/dourado extraída diretamente da logo da marca.
+- **Performance** — Bundling e dev server via Vite, imagens otimizadas em WebP, para carregamento rápido mesmo em conexões móveis.
 
 ## Destaques Técnicos
 
-- **Componentização** — refatoração de um único arquivo para uma arquitetura de componentes independentes por seção (`Navbar`, `Hero`, `Stats`, `Sobre`, `Vitrine`, `Servicos`, `FAQ`, `Footer`), seguindo o princípio da responsabilidade única.
-- **Design de autoridade industrial (split-screen)** — layout de tela dividida no Hero com blocos sólidos de cor e cortes poligonais (`clip-path`), garantindo contraste máximo para o texto de conversão sobre a fotografia industrial.
-- **Responsividade híbrida mobile-first** — Navbar com estrutura de 3 colunas em CSS Grid no desktop, que se transforma em menu hambúrguer interativo em telas menores, garantindo que o pedido de orçamento esteja sempre a um toque de distância.
+- **Componentização** — arquitetura de componentes independentes por seção (`Navbar`, `Hero`, `Stats`, `Sobre`, `Processo`, `Portfolio`, `Vitrine`, `Servicos`, `FAQ`, `Footer`), cada um com responsabilidade única.
+- **Hooks de animação customizados** — `useInView` (`IntersectionObserver` reutilizável) e `useCountUp` (parsing de prefixo/número/sufixo + `requestAnimationFrame`) implementados do zero para os contadores animados dos Stats e os conectores progressivos da seção Processo, sem depender de biblioteca externa.
+- **Configuração centralizada** — número e mensagens do WhatsApp isolados em `src/config.js`, evitando duplicação de link hardcoded pelos componentes.
+- **Responsividade híbrida mobile-first** — Navbar com CSS Grid no desktop que se transforma em menu hambúrguer interativo no mobile; seção Processo alterna entre layout horizontal (desktop) e vertical (mobile).
 - **Gerenciamento de estado** — uso de `useState` para controlar abertura do menu mobile e do acordeão de FAQ de forma reativa.
-- **CSS avançado** — cartões com `backdrop-filter: blur`, gradientes radiais complexos e transformações 3D no hover do Hero.
-- **Animações no scroll** — integração com a biblioteca AOS (Animate On Scroll) para revelar conteúdo conforme o usuário navega pela página.
+- **Animações no scroll** — biblioteca AOS para revelações genéricas, combinada com os hooks customizados para os momentos de destaque (Hero, Stats, Processo).
 
 ## Stack Técnica
 
