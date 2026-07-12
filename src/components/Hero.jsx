@@ -50,6 +50,9 @@ export default function Hero() {
           className="w-full h-full object-cover object-right"
         />
         <CornerMarks />
+        <span className="absolute bottom-4 left-9 font-mono text-[10px] bg-brand-bg/80 text-brand-success px-2 py-1 rounded">
+          ASSISTÊNCIA TÉCNICA AUTORIZADA
+        </span>
       </div>
     </header>
   );

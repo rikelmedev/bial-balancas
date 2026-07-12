@@ -3,9 +3,9 @@ import { WhatsappLogo } from '@phosphor-icons/react';
 import { whatsappLink } from '../config';
 
 const produtos = [
-  { t: 'Balança Comercial', d: 'Tecnologia de ponta para o varejo moderno.', img: '/imagens/anuncio1.webp', cat: 'COMÉRCIO' },
-  { t: 'Plataforma Industrial', d: 'Resistência extrema para fluxos pesados.', img: '/imagens/anuncio4.webp', cat: 'INDÚSTRIA' },
-  { t: 'Sistema Térmico', d: 'Automação ágil com impressão de alta definição.', img: '/imagens/anuncio5.webp', cat: 'AUTOMAÇÃO' },
+  { t: 'Balança Comercial', d: 'Equipamento revisado, com garantia integral e consultoria técnica para escolher o modelo certo.', img: '/imagens/anuncio1.webp', cat: 'COMÉRCIO' },
+  { t: 'Plataforma Industrial', d: 'Resistência para fluxos pesados, com instalação e calibração pelo nosso laboratório técnico próprio.', img: '/imagens/anuncio4.webp', cat: 'INDÚSTRIA' },
+  { t: 'Sistema Térmico', d: 'Automação ágil com impressão de alta definição e suporte técnico no local incluso.', img: '/imagens/anuncio5.webp', cat: 'AUTOMAÇÃO' },
 ];
 
 export default function Vitrine() {
@@ -15,7 +15,8 @@ export default function Vitrine() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8" data-aos="fade-up">
           <div className="max-w-2xl">
             <span className="font-mono text-brand-accent uppercase text-xs tracking-[4px] mb-4 block">Equipamentos</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter">Vitrine de <span className="text-brand-accent italic">Precisão.</span></h2>
+            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter mb-4">Vitrine de <span className="text-brand-accent italic">Precisão.</span></h2>
+            <p className="text-white/40 text-sm">Todo equipamento sai com garantia integral, consultoria técnica e suporte da nossa equipe — não é só venda, é parceria.</p>
           </div>
           <a
             href={whatsappLink('Olá! Gostaria de ver o catálogo completo de equipamentos.')}

@@ -6,6 +6,7 @@ export default function FAQ({ openFaq, setOpenFaq }) {
     { q: 'Atendem balanças rodoviárias?', a: 'Sim! Somos especialistas em balanças industriais de todos os portes.' },
     { q: 'Os equipamentos têm garantia?', a: 'Sim, todos os equipamentos vendidos possuem garantia integral.' },
     { q: 'Vocês atendem no local?', a: 'Sim, realizamos visitas técnicas imediatas em toda a região.' },
+    { q: 'Qual o prazo de atendimento?', a: 'Suporte ágil: visitas técnicas imediatas e atendimento em até 24h após o contato.' },
   ];
 
   return (

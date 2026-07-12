@@ -1,5 +1,6 @@
 import React from 'react';
-import { whatsappLink } from '../config';
+import { Phone } from '@phosphor-icons/react';
+import { whatsappLink, PHONE_DISPLAY, PHONE_TEL_LINK } from '../config';
 
 export default function Footer() {
   return (
@@ -14,6 +15,10 @@ export default function Footer() {
           className="inline-flex bg-brand-accent text-brand-blue px-12 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:brightness-110 transition-all"
         >
           Solicitar Orçamento Técnico
+        </a>
+        <a href={PHONE_TEL_LINK} className="mt-6 flex items-center justify-center gap-2 font-mono text-xs text-white/40 hover:text-brand-accent transition-colors">
+          <Phone size={14} weight="fill" />
+          Ou ligue: {PHONE_DISPLAY}
         </a>
         <p className="mt-12 text-white/30 text-[10px] uppercase tracking-[5px]">© {new Date().getFullYear()} Bial Balanças.</p>
       </div>

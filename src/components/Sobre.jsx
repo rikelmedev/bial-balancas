@@ -29,6 +29,7 @@ export default function Sobre() {
           <div className="space-y-4 font-bold">
             <div className="flex items-center gap-3"><CheckCircle size={24} weight="fill" className="text-brand-accent" /> SUPORTE TÉCNICO NO LOCAL</div>
             <div className="flex items-center gap-3"><CheckCircle size={24} weight="fill" className="text-brand-accent" /> LABORATÓRIO DE MANUTENÇÃO PRÓPRIO</div>
+            <div className="flex items-center gap-3"><CheckCircle size={24} weight="fill" className="text-brand-accent" /> ASSISTÊNCIA TÉCNICA AUTORIZADA</div>
           </div>
         </div>
       </div>
