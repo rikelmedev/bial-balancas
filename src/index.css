@@ -1,72 +1,67 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand-bg: #0B0F14;
+  --color-brand-bg-light: #12181F;
   --color-brand-blue: #091E3A;
   --color-brand-blue-light: #1A3C61;
-  --color-brand-gold: #D4AF37;
-  --color-brand-gold-shimmer: #FADC86;
-  
-  --color-brand-primary-btn: linear-gradient(135deg, #10b981 0%, #15803d 100%);
+  --color-brand-accent: #EF9F27;
+  --color-brand-success: #1D9E75;
 
-  --bg-gold-gradient: linear-gradient(135deg, #FADC86 0%, #D4AF37 50%, #B49126 100%);
-  --bg-hero-radial: radial-gradient(circle at 30% 30%, #1A3C61 0%, #091E3A 60%, #02060c 100%);
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
   body {
-    @apply bg-[#F8FAFC] text-[#1E293B] antialiased;
+    @apply bg-brand-bg text-white antialiased;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
-/* --- ANIMAÇÕES E EFEITOS --- */
-
-/* Brilho Dourado no Botão */
-.animate-shimmer {
-  position: relative;
-  overflow: hidden;
-  border-radius: 9999px; 
+/* --- MOTIVO: GRADE DE FUNDO (BLUEPRINT) --- */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: gridFadeIn 500ms ease-out;
 }
 
-.animate-shimmer::after {
-  content: "";
+@keyframes gridFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- MOTIVO: CANTOS DE MIRA (MEDIÇÃO) --- */
+.corner-mark {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    110deg,
-    rgba(250, 220, 134, 0) 45%,
-    rgba(250, 220, 134, 0.4) 50%,
-    rgba(250, 220, 134, 0) 55%
-  );
-  transform: rotate(110deg);
-  animation: shimmer 4s infinite linear;
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-brand-accent);
+  opacity: 0;
+  animation: bracketPop 400ms ease-out forwards;
+}
+.corner-mark--tl { top: 12px; left: 12px; border-top: 2px solid; border-left: 2px solid; animation-delay: 200ms; }
+.corner-mark--tr { top: 12px; right: 12px; border-top: 2px solid; border-right: 2px solid; animation-delay: 280ms; }
+.corner-mark--bl { bottom: 12px; left: 12px; border-bottom: 2px solid; border-left: 2px solid; animation-delay: 360ms; }
+.corner-mark--br { bottom: 12px; right: 12px; border-bottom: 2px solid; border-right: 2px solid; animation-delay: 440ms; }
+
+@keyframes bracketPop {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+/* --- ANIMAÇÃO: LINHA CONECTORA (Stats / Processo) --- */
+.connector-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 700ms ease-out;
+}
+.connector-line.is-visible {
+  transform: scaleX(1);
 }
 
-/* Efeito Hover nos Cartões */
+/* --- EFEITO HOVER NOS CARTÕES --- */
 .card-hover {
-  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-brand-gold/30;
-}
-
-/* Efeito de Vidro para sobreposições de texto */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-
-.text-gradient-gold {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-gold to-white/80;
-}
-
-.polygon-left {
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  @apply transition-all duration-300 hover:-translate-y-2 hover:border-brand-accent/40;
 }
