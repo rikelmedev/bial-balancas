@@ -19,9 +19,9 @@ Landing page de alta performance para a **Bial Balanças**, empresa especialista
 
 ---
 
-## O Problema
+## O Desafio
 
-A empresa precisava de uma presença digital moderna e com autoridade que transmitisse confiança a clientes B2B (supermercados, padarias, indústrias). O objetivo era destacar os serviços de manutenção e venda, além de facilitar ao máximo o pedido de orçamentos rápidos — especialmente em dispositivos móveis, onde a urgência por reparos costuma ser maior.
+O objetivo era transformar a presença digital da Bial numa ferramenta de autoridade técnica para clientes B2B (supermercados, padarias, indústrias). O setor industrial exige confiança e precisão — por isso o design foi pensado para transmitir solidez, usando paleta institucional e imagens reais da operação técnica, além de facilitar ao máximo o pedido de orçamentos rápidos em dispositivos móveis, onde a urgência por reparos costuma ser maior.
 
 ## A Solução
 
@@ -33,8 +33,9 @@ Landing page construída com **React + Vite**, com foco em três pilares:
 
 ## Destaques Técnicos
 
-- **Componentização** — página dividida em componentes de seção isolados (`Navbar`, `Hero`, `Stats`, `Sobre`, `Vitrine`, `Servicos`, `FAQ`, `Footer`), cada um com responsabilidade única.
-- **Responsividade mobile-first** — Navbar com estrutura de 3 colunas em CSS Grid no desktop, que se transforma em menu hambúrguer interativo em telas menores.
+- **Componentização** — refatoração de um único arquivo para uma arquitetura de componentes independentes por seção (`Navbar`, `Hero`, `Stats`, `Sobre`, `Vitrine`, `Servicos`, `FAQ`, `Footer`), seguindo o princípio da responsabilidade única.
+- **Design de autoridade industrial (split-screen)** — layout de tela dividida no Hero com blocos sólidos de cor e cortes poligonais (`clip-path`), garantindo contraste máximo para o texto de conversão sobre a fotografia industrial.
+- **Responsividade híbrida mobile-first** — Navbar com estrutura de 3 colunas em CSS Grid no desktop, que se transforma em menu hambúrguer interativo em telas menores, garantindo que o pedido de orçamento esteja sempre a um toque de distância.
 - **Gerenciamento de estado** — uso de `useState` para controlar abertura do menu mobile e do acordeão de FAQ de forma reativa.
 - **CSS avançado** — cartões com `backdrop-filter: blur`, gradientes radiais complexos e transformações 3D no hover do Hero.
 - **Animações no scroll** — integração com a biblioteca AOS (Animate On Scroll) para revelar conteúdo conforme o usuário navega pela página.
@@ -48,12 +49,6 @@ Landing page construída com **React + Vite**, com foco em três pilares:
 | Ícones | Phosphor Icons |
 | Animação | AOS (Animate On Scroll) |
 | Qualidade | ESLint |
-
-## Decisões Técnicas / O que Aprendi
-
-- **Glassmorphism e UI 3D** — aprofundei conhecimentos em CSS ao criar cartões com efeito de vidro, gradientes radiais complexos e perspectivas 3D no hover da imagem do Hero.
-- **Responsividade híbrida** — Navbar inteligente com CSS Grid no desktop e menu hambúrguer interativo no mobile.
-- **Gerenciamento de estado simples** — uso do hook `useState` para controlar UI reativa sem precisar de uma lib de estado externa.
 
 ## Como Rodar o Projeto Localmente
 
