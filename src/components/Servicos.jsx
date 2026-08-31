@@ -1,6 +1,7 @@
 import React from 'react';
 import { Wrench, ShieldCheck, Storefront } from '@phosphor-icons/react';
 import { whatsappLink } from '../config';
+import CornerMarks from './CornerMarks';
 
 const servicos = [
   {
@@ -41,7 +42,8 @@ export default function Servicos() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {servicos.map((s) => (
-            <div key={s.title} className="card-hover bg-brand-bg border border-white/10 p-10 rounded-2xl group" data-aos="fade-up">
+            <div key={s.title} className="card-hover relative bg-brand-bg border border-white/10 p-10 rounded-2xl group" data-aos="fade-up">
+              <CornerMarks variant="hover" />
               <div className="bg-brand-accent/10 w-16 h-16 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                 <s.icon size={32} weight="fill" className="text-brand-accent" />
               </div>
