@@ -13,7 +13,9 @@ function StatItem({ value, label, isInView }) {
   const display = useCountUp(value, isInView);
   return (
     <div>
-      <div className="font-mono text-3xl md:text-4xl text-brand-accent">{display}</div>
+      <div className="font-mono text-3xl md:text-4xl text-brand-accent">
+        {display}<span className="cursor-blink">_</span>
+      </div>
       <div className="font-mono text-[10px] text-white/40 tracking-widest mt-1">{label}</div>
     </div>
   );

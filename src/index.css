@@ -18,6 +18,19 @@
   }
 }
 
+.font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- CURSOR PISCANDO: LEITURA "PAINEL AO VIVO" --- */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 /* --- TEXTURA: GRÃO SUTIL --- */
 body::after {
   content: '';
