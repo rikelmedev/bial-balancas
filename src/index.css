@@ -128,3 +128,8 @@ body::after {
   transform: translate(-50%, -50%) rotate(-90deg);
   white-space: nowrap;
 }
+
+/* --- CURSOR: MIRA DE PRECISÃO (fotos de produto) --- */
+.cursor-reticle {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='10' fill='none' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Cline x1='14' y1='0' x2='14' y2='7' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Cline x1='14' y1='21' x2='14' y2='28' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Cline x1='0' y1='14' x2='7' y2='14' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Cline x1='21' y1='14' x2='28' y2='14' stroke='%23D4AF37' stroke-width='1.5'/%3E%3Ccircle cx='14' cy='14' r='1.5' fill='%23D4AF37'/%3E%3C/svg%3E") 14 14, crosshair;
+}

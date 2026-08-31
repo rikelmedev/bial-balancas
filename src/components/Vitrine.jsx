@@ -31,7 +31,7 @@ export default function Vitrine() {
         <div className="grid md:grid-cols-3 gap-8">
           {produtos.map((p) => (
             <div key={p.t} className="card-hover bg-brand-bg-light border border-white/10 rounded-2xl overflow-hidden group" data-aos="fade-up">
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="cursor-reticle relative aspect-[4/3] overflow-hidden">
                 <img src={p.img} alt={p.t} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <CornerMarks variant="hover" />
                 <span className="absolute top-4 left-4 font-mono text-[10px] bg-brand-bg/80 text-brand-accent px-3 py-1.5 rounded uppercase tracking-widest">

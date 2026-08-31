@@ -11,8 +11,8 @@ export default function Portfolio() {
           <h2 className="text-4xl lg:text-5xl font-black tracking-tighter max-w-2xl">Laboratório próprio, <span className="text-brand-accent italic">equipe técnica dedicada.</span></h2>
         </div>
 
-        <div className="grid md:grid-cols-[1.4fr,1fr] gap-6">
-          <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[4/3]" data-aos="fade-up">
+        <div className="grid md:grid-cols-[1.4fr_1fr] gap-6">
+          <div className="cursor-reticle relative rounded-xl overflow-hidden border border-white/10 aspect-[4/3]" data-aos="fade-up">
             <img
               src="/imagens/oficina.webp"
               alt="Oficina técnica da Bial Balanças, com bancadas e equipamentos de calibração"
@@ -24,7 +24,7 @@ export default function Portfolio() {
             </span>
           </div>
 
-          <div className="relative rounded-xl overflow-hidden border border-white/10 aspect-[4/3]" data-aos="fade-up" data-aos-delay="100">
+          <div className="cursor-reticle relative rounded-xl overflow-hidden border border-white/10 aspect-[4/3]" data-aos="fade-up" data-aos-delay="100">
             <img
               src="/imagens/bial.webp"
               alt="Técnico responsável da Bial Balanças"
