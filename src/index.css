@@ -84,3 +84,34 @@
 .card-hover {
   @apply transition-all duration-300 hover:-translate-y-2 hover:border-brand-accent/40;
 }
+
+/* --- MOTIVO: RÉGUA DE PRECISÃO (elemento de assinatura) --- */
+.ruler-v {
+  position: absolute;
+  width: 1px;
+}
+.ruler-v::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  width: 9px;
+  background-image: repeating-linear-gradient(to bottom, var(--color-brand-accent) 0 1px, transparent 1px 16px);
+  opacity: 0.35;
+}
+.ruler-v::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -8px;
+  width: 17px;
+  background-image: repeating-linear-gradient(to bottom, var(--color-brand-accent) 0 1.5px, transparent 1.5px 96px);
+  opacity: 0.6;
+}
+.ruler-v-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}

@@ -5,7 +5,7 @@ import { whatsappLink } from '../config';
 
 export default function Hero() {
   return (
-    <header className="relative w-full min-h-[90vh] mt-[73px] grid grid-cols-1 md:grid-cols-[1.2fr,1fr] bg-brand-bg overflow-hidden">
+    <header className="relative w-full min-h-[90vh] mt-[73px] grid grid-cols-1 md:grid-cols-[1.2fr_1fr] bg-brand-bg overflow-hidden">
       <div className="grid-bg absolute inset-0 pointer-events-none" />
 
       <div className="relative z-10 p-8 md:p-16 flex flex-col justify-center">
@@ -44,6 +44,9 @@ export default function Hero() {
       </div>
 
       <div className="relative m-6 md:m-8 rounded-xl overflow-hidden border border-white/10 bg-brand-bg-light">
+        <div className="ruler-v hidden md:block left-5 top-10 bottom-10">
+          <span className="ruler-v-label font-mono text-[9px] text-brand-accent/70 tracking-[3px]">± 0.01G DE TOLERÂNCIA</span>
+        </div>
         <img
           src="/imagens/oficina.webp"
           alt="Técnico da Bial Balanças em oficina, realizando manutenção de balança industrial"
