@@ -14,6 +14,7 @@ import Vitrine from './components/Vitrine';
 import Servicos from './components/Servicos';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import SectionDivider from './components/SectionDivider';
 import { whatsappLink } from './config';
 
 export default function App() {
@@ -30,13 +31,21 @@ export default function App() {
 
       <main>
         <Hero />
+        <SectionDivider />
         <StatsSection />
+        <SectionDivider />
         <Sobre />
+        <SectionDivider />
         <Processo />
+        <SectionDivider />
         <Portfolio />
+        <SectionDivider />
         <Vitrine />
+        <SectionDivider />
         <Servicos />
+        <SectionDivider />
         <FAQ openFaq={openFaq} setOpenFaq={setOpenFaq} />
+        <SectionDivider />
       </main>
 
       <Footer />

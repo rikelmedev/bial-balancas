@@ -4,7 +4,7 @@ import { whatsappLink, PHONE_DISPLAY, PHONE_TEL_LINK } from '../config';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-bg py-16 text-center border-t border-white/10">
+    <footer className="bg-brand-bg py-16 text-center">
       <div className="container mx-auto px-6">
         <div className="bg-white p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-8">
           <img src="/imagens/logo.png" alt="Logo" className="object-contain" />
