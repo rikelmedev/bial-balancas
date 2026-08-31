@@ -23,9 +23,10 @@ export default function StatsSection() {
   const [ref, isInView] = useInView();
 
   return (
-    <div ref={ref} className="relative bg-brand-bg-light py-12 border-y border-white/5">
+    <div ref={ref} className="relative overflow-hidden bg-brand-bg-light py-12 border-y border-white/5">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
       <div className={`connector-line absolute top-1/2 left-6 right-6 h-px bg-brand-accent/30 ${isInView ? 'is-visible' : ''}`} />
-      <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative">
+      <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
         {stats.map(([val, label]) => (
           <StatItem key={label} value={val} label={label} isInView={isInView} />
         ))}

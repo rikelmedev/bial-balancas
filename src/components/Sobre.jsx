@@ -3,8 +3,9 @@ import { CheckCircle } from '@phosphor-icons/react';
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="py-24 bg-brand-bg overflow-hidden">
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="sobre" className="relative py-24 bg-brand-bg overflow-hidden">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
         <div className="relative" data-aos="zoom-in">
           <div className="overflow-hidden rounded-3xl aspect-[4/5] md:aspect-square w-full bg-brand-bg-light border border-white/10">
             <img

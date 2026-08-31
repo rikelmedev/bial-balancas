@@ -10,8 +10,9 @@ export default function FAQ({ openFaq, setOpenFaq }) {
   ];
 
   return (
-    <section className="py-24 bg-brand-bg">
-      <div className="container mx-auto px-6 max-w-3xl">
+    <section className="relative py-24 bg-brand-bg overflow-hidden">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6 max-w-3xl">
         <h2 className="text-3xl font-black text-center mb-12">Dúvidas Frequentes</h2>
         <div className="space-y-4">
           {faqs.map((f, i) => (

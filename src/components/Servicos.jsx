@@ -29,6 +29,7 @@ const servicos = [
 export default function Servicos() {
   return (
     <section id="servicos" className="py-32 bg-brand-bg-light overflow-hidden relative">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20" data-aos="fade-down">
           <span className="font-mono text-brand-accent uppercase text-xs tracking-[4px] mb-4 block">Excelência Técnica</span>

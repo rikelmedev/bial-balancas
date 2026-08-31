@@ -39,8 +39,9 @@ export default function Processo() {
   }, []);
 
   return (
-    <section className="py-24 bg-brand-bg">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 bg-brand-bg overflow-hidden">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6">
         <div className="text-center mb-16" data-aos="fade-up">
           <span className="font-mono text-brand-accent uppercase text-xs tracking-[4px] mb-4 block">Como Funciona</span>
           <h2 className="text-4xl lg:text-5xl font-black tracking-tighter">Do chamado à <span className="text-brand-accent italic">garantia.</span></h2>

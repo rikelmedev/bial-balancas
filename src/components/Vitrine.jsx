@@ -10,8 +10,9 @@ const produtos = [
 
 export default function Vitrine() {
   return (
-    <section id="vitrine" className="py-32 bg-brand-bg relative">
-      <div className="container mx-auto px-6">
+    <section id="vitrine" className="py-32 bg-brand-bg relative overflow-hidden">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8" data-aos="fade-up">
           <div className="max-w-2xl">
             <span className="font-mono text-brand-accent uppercase text-xs tracking-[4px] mb-4 block">Equipamentos</span>

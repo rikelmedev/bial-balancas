@@ -3,8 +3,9 @@ import CornerMarks from './CornerMarks';
 
 export default function Portfolio() {
   return (
-    <section className="py-24 bg-brand-bg-light">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 bg-brand-bg-light overflow-hidden">
+      <div className="grid-bg absolute inset-0 pointer-events-none" />
+      <div className="relative z-10 container mx-auto px-6">
         <div className="mb-12" data-aos="fade-up">
           <span className="font-mono text-brand-accent uppercase text-xs tracking-[4px] mb-4 block">Nossa Estrutura</span>
           <h2 className="text-4xl lg:text-5xl font-black tracking-tighter max-w-2xl">Laboratório próprio, <span className="text-brand-accent italic">equipe técnica dedicada.</span></h2>
